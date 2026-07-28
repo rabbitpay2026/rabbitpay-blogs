@@ -12,7 +12,8 @@
       {
         "group": "Blog",
         "pages": [
-          "index"
+          "index",
+          "posts/example-post"
         ]
       }
     ]
