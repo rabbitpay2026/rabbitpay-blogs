@@ -14,7 +14,8 @@
         "pages": [
           "index",
           "posts/example-post"
-        ]
+        ],
+        "hidden": true
       }
     ]
   }
