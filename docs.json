@@ -13,6 +13,7 @@
         "group": "Blog",
         "pages": [
           "index",
+          "blog/index",
           "blog/how-rabbitpay-works",
           "blog/partial-payment",
           "blog/otp-verification"
