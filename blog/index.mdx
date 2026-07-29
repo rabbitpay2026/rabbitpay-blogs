@@ -5,205 +5,270 @@ sidebarTitle: "Blog Home"
 mode: "custom"
 ---
 
-export const CoverPlaceholder = ({ tone = "a", rounded = "rounded-2xl" }) => {
-  const tones = {
-    a: "bg-gradient-to-br from-blue-100 via-indigo-100 to-blue-200 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900",
-    b: "bg-gradient-to-tr from-sky-100 via-blue-100 to-indigo-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900",
-    c: "bg-gradient-to-br from-indigo-100 via-blue-100 to-sky-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900",
-    d: "bg-gradient-to-tr from-blue-200 via-blue-100 to-indigo-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900",
-    e: "bg-gradient-to-br from-sky-100 via-indigo-100 to-blue-200 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900",
-    f: "bg-gradient-to-tr from-indigo-100 via-sky-100 to-blue-100 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900"
-  };
-  return (
-    <div className={`relative w-full h-full ${tones[tone]} ${rounded} overflow-hidden`}>
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-16 w-16 rounded-xl" style={{ backgroundColor: "#196BF5", opacity: 0.18 }} />
-      </div>
-      <div className="absolute top-4 left-4 text-[10px] font-medium uppercase tracking-widest text-gray-500 dark:text-zinc-500">Cover placeholder</div>
-    </div>
-  );
-};
+export const PageBackground = () => (
+  <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div
+      className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[900px] rounded-full blur-3xl opacity-[0.18]"
+      style={{ background: "radial-gradient(closest-side, #196BF5, transparent 70%)" }}
+    />
+    <div
+      className="absolute top-[40%] -left-40 h-[420px] w-[420px] rounded-full blur-3xl opacity-[0.10]"
+      style={{ background: "radial-gradient(closest-side, #196BF5, transparent 70%)" }}
+    />
+    <div
+      className="absolute inset-0 opacity-[0.35]"
+      style={{
+        backgroundImage:
+          "radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px)",
+        backgroundSize: "22px 22px"
+      }}
+    />
+  </div>
+);
+
+export const CoverPlaceholder = ({ rounded = "rounded-xl" }) => (
+  <div
+    className={`relative w-full h-full ${rounded} overflow-hidden border border-white/[0.06]`}
+    style={{
+      background:
+        "linear-gradient(135deg, rgba(25,107,245,0.10) 0%, rgba(10,14,25,0.6) 45%, rgba(6,9,17,0.9) 100%)"
+    }}
+  >
+    <div
+      className="absolute -top-24 -right-24 h-64 w-64 rounded-full blur-3xl opacity-40"
+      style={{ background: "radial-gradient(closest-side, #196BF5, transparent 70%)" }}
+    />
+    <div
+      className="absolute inset-0 opacity-[0.5]"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
+        backgroundSize: "40px 40px"
+      }}
+    />
+  </div>
+);
+
+export const CoverFrame = ({ image, alt, rounded = "rounded-xl" }) => (
+  <div className={`relative aspect-[16/9] w-full overflow-hidden ${rounded} border border-white/[0.08] bg-[#0A0E19]`}>
+    {image ? (
+      <img src={image} alt={alt} className="absolute inset-0 w-full h-full object-cover" />
+    ) : (
+      <CoverPlaceholder rounded="" />
+    )}
+  </div>
+);
 
 export const CategoryPill = ({ label, active }) => (
   <span
     className={active
-      ? "inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium text-white whitespace-nowrap"
-      : "inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium text-gray-700 dark:text-zinc-300 border border-gray-200 dark:border-zinc-800 whitespace-nowrap hover:border-gray-300 dark:hover:border-zinc-700 transition-colors"}
+      ? "inline-flex items-center px-4 py-1.5 rounded-full text-[13px] font-medium text-white whitespace-nowrap shadow-[0_0_0_1px_rgba(25,107,245,0.6),0_8px_24px_-8px_rgba(25,107,245,0.6)]"
+      : "inline-flex items-center px-4 py-1.5 rounded-full text-[13px] font-medium text-zinc-400 border border-white/[0.08] whitespace-nowrap hover:text-white hover:border-white/20 transition-colors"}
     style={active ? { backgroundColor: "#196BF5" } : undefined}
   >
     {label}
   </span>
 );
 
-export const CategoryChip = ({ label }) => (
-  <span
-    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide"
-    style={{ backgroundColor: "rgba(25, 107, 245, 0.1)", color: "#196BF5" }}
-  >
-    {label}
-  </span>
+export const Meta = ({ category, date, readingTime }) => (
+  <div className="flex items-center gap-2 text-[12px] uppercase tracking-[0.14em] text-zinc-500">
+    <span className="font-semibold" style={{ color: "#5B93FF" }}>{category}</span>
+    <span className="text-zinc-700">·</span>
+    <span>{date}</span>
+    <span className="text-zinc-700">·</span>
+    <span>{readingTime}</span>
+  </div>
 );
 
-export const ArticleCard = ({ href, category, date, readingTime, title, excerpt, tone, image }) => (
+export const ArticleCard = ({ href, category, date, readingTime, title, excerpt, image }) => (
   <a href={href} className="group flex flex-col no-underline">
-    <div className="aspect-[16/9] w-full">
-      {image ? (
-        <img src={image} alt={title} className="w-full h-full object-cover rounded-2xl" />
-      ) : (
-        <CoverPlaceholder tone={tone} rounded="rounded-2xl" />
-      )}
-    </div>
-    <div className="mt-5 flex flex-col flex-1">
-      <div className="flex items-center gap-3 text-xs">
-        <CategoryChip label={category} />
-        <span className="text-gray-500 dark:text-zinc-500">{date}</span>
-        <span className="text-gray-400 dark:text-zinc-600">·</span>
-        <span className="text-gray-500 dark:text-zinc-500">{readingTime}</span>
-      </div>
-      <h3 className="mt-3 text-xl font-semibold tracking-tight text-gray-900 dark:text-zinc-50 leading-snug group-hover:opacity-80 transition-opacity">
+    <CoverFrame image={image} alt={title} />
+    <div className="mt-6 flex flex-col flex-1">
+      <Meta category={category} date={date} readingTime={readingTime} />
+      <h3 className="mt-4 text-[22px] font-semibold tracking-tight text-white leading-[1.25] group-hover:text-[#5B93FF] transition-colors">
         {title}
       </h3>
-      <p className="mt-2 text-[15px] text-gray-600 dark:text-zinc-400 leading-relaxed">{excerpt}</p>
+      <p className="mt-3 text-[15px] text-zinc-400 leading-relaxed">{excerpt}</p>
     </div>
   </a>
 );
 
 export const FeaturedStory = () => (
-  <a href="/blog/how-rabbitpay-works" className="block no-underline group">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      <div className="lg:col-span-7">
-        <div className="aspect-[16/10] w-full">
-          <img src="/images/how-rabbitpay-works.png" alt="How RabbitPay works" className="w-full h-full object-cover rounded-3xl" />
+  <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <a href="/blog/how-rabbitpay-works" className="lg:col-span-7 block no-underline group">
+      <div className="relative">
+        <div
+          aria-hidden="true"
+          className="absolute -inset-4 rounded-2xl blur-2xl opacity-40 transition-opacity group-hover:opacity-60"
+          style={{ background: "radial-gradient(closest-side, rgba(25,107,245,0.35), transparent 70%)" }}
+        />
+        <div className="relative">
+          <CoverFrame image="/images/how-rabbitpay-works.png" alt="How RabbitPay works" rounded="rounded-2xl" />
         </div>
       </div>
-      <div className="lg:col-span-5 flex flex-col">
-        <div className="flex items-center gap-3 text-xs">
-          <CategoryChip label="RabbitPay Updates" />
-          <span className="text-gray-500 dark:text-zinc-500">July 29, 2026</span>
-          <span className="text-gray-400 dark:text-zinc-600">·</span>
-          <span className="text-gray-500 dark:text-zinc-500">5 min read</span>
-        </div>
-        <h2 className="mt-5 text-3xl md:text-4xl lg:text-[2.5rem] font-semibold tracking-tight text-gray-900 dark:text-zinc-50 leading-[1.15] group-hover:opacity-80 transition-opacity">
-          How RabbitPay works
+    </a>
+    <div className="lg:col-span-5 flex flex-col">
+      <Meta category="RabbitPay Updates" date="July 29, 2026" readingTime="5 min read" />
+      <a href="/blog/how-rabbitpay-works" className="no-underline">
+        <h2 className="mt-5 text-3xl md:text-4xl lg:text-[2.6rem] font-semibold tracking-tight text-white leading-[1.1] hover:text-[#5B93FF] transition-colors">
+          How RabbitPay Works
         </h2>
-        <p className="mt-5 text-lg text-gray-600 dark:text-zinc-400 leading-relaxed">
-          A walkthrough of RabbitPay's 1-Click Checkout for Shopify merchants: what happens from the moment a shopper lands on the checkout to order confirmation.
-        </p>
-        <div className="mt-7 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-zinc-800" />
-            <div className="text-sm leading-tight">
-              <p className="font-medium text-gray-900 dark:text-zinc-100">RabbitPay Team</p>
-              <p className="text-gray-500 dark:text-zinc-500">Editorial</p>
-            </div>
-          </div>
-          <span className="text-sm font-semibold" style={{ color: "#196BF5" }}>Read article →</span>
+      </a>
+      <p className="mt-5 text-[17px] text-zinc-400 leading-relaxed">
+        A walkthrough of RabbitPay's 1-Click Checkout for Shopify merchants, from customer verification and address prefill to payment and order confirmation.
+      </p>
+      <div className="mt-8 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div
+            className="h-9 w-9 rounded-full border border-white/10"
+            style={{ background: "linear-gradient(135deg, #196BF5 0%, #0A0E19 100%)" }}
+          />
+          <p className="text-sm font-medium text-zinc-300">RabbitPay Team</p>
         </div>
+        <a
+          href="/blog/how-rabbitpay-works"
+          className="text-sm font-semibold no-underline inline-flex items-center gap-1.5 group/link"
+          style={{ color: "#5B93FF" }}
+        >
+          Read article
+          <span className="transition-transform group-hover/link:translate-x-0.5">→</span>
+        </a>
       </div>
     </div>
-  </a>
+  </div>
 );
 
 export const Hero = () => (
-  <section className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 lg:pt-24 pb-14 lg:pb-20">
-    <p className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: "#196BF5" }}>RabbitPay Blog</p>
-    <h1 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 dark:text-zinc-50 max-w-4xl leading-[1.05]">
+  <section className="relative max-w-6xl mx-auto px-6 lg:px-8 pt-20 lg:pt-28 pb-16 lg:pb-20">
+    <p className="text-[11px] font-semibold uppercase tracking-[0.28em]" style={{ color: "#5B93FF" }}>
+      RabbitPay Blog
+    </p>
+    <h1 className="mt-6 text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-tight text-white max-w-4xl leading-[1.05]">
       Insights for better checkout, higher conversion, and smarter e-commerce growth.
     </h1>
-    <p className="mt-6 max-w-2xl text-lg lg:text-xl text-gray-600 dark:text-zinc-400 leading-relaxed">
-      Perspectives on checkout, payments, COD, RTO, and conversion, written for the teams building the next wave of Shopify stores and Indian D2C brands.
+    <p className="mt-7 max-w-2xl text-[17px] lg:text-lg text-zinc-400 leading-relaxed">
+      Perspectives on checkout, payments, COD, RTO, and conversion for teams building the next generation of Indian D2C commerce.
     </p>
   </section>
 );
 
 export const FeaturedSection = () => (
-  <section className="max-w-7xl mx-auto px-6 lg:px-10 pb-16 lg:pb-24">
-    <div className="flex items-center justify-between mb-8">
-      <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-zinc-500">Featured story</h2>
-    </div>
+  <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-20 lg:pb-24">
+    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-zinc-500 mb-8">
+      Featured story
+    </p>
     <FeaturedStory />
   </section>
 );
 
 export const CategoryBar = () => (
-  <section className="max-w-7xl mx-auto px-6 lg:px-10 pb-10 lg:pb-14">
-    <div className="flex flex-wrap items-center gap-2.5 border-y border-gray-200 dark:border-zinc-800 py-6">
-      <CategoryPill label="All" active />
-      <CategoryPill label="Shopify" />
-      <CategoryPill label="Checkout & Conversion" />
-      <CategoryPill label="COD & RTO" />
-      <CategoryPill label="Payments" />
-      <CategoryPill label="RabbitPay Updates" />
+  <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-16 lg:pb-20">
+    <div className="border-y border-white/[0.06] py-5 -mx-6 lg:mx-0 px-6 lg:px-0 overflow-x-auto">
+      <div className="flex items-center gap-2.5 min-w-max lg:min-w-0 lg:flex-wrap">
+        <CategoryPill label="All" active />
+        <CategoryPill label="Checkout & Conversion" />
+        <CategoryPill label="COD & RTO" />
+        <CategoryPill label="Payments" />
+        <CategoryPill label="Shopify Growth" />
+        <CategoryPill label="RabbitPay Updates" />
+      </div>
     </div>
   </section>
 );
 
 export const LatestGrid = () => (
-  <section className="max-w-7xl mx-auto px-6 lg:px-10 pb-24 lg:pb-32">
-    <div className="flex items-baseline justify-between mb-10">
-      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 dark:text-zinc-50">Latest articles</h2>
+  <section className="max-w-6xl mx-auto px-6 lg:px-8 pb-24 lg:pb-32">
+    <div className="flex items-baseline justify-between mb-12">
+      <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+        Latest articles
+      </h2>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
       <ArticleCard
         href="/blog/how-rabbitpay-works"
         image="/images/how-rabbitpay-works.png"
         category="RabbitPay Updates"
-        date="July 29, 2026"
+        date="Jul 29, 2026"
         readingTime="5 min read"
-        title="How RabbitPay works"
-        excerpt="A walkthrough of RabbitPay's 1-Click Checkout for Shopify merchants: what happens from the moment a shopper lands on the checkout to order confirmation."
+        title="How RabbitPay Works"
+        excerpt="A walkthrough of RabbitPay's 1-Click Checkout for Shopify merchants, from checkout to order confirmation."
       />
       <ArticleCard
         href="/blog/partial-payment"
         image="/images/partial-payment.png"
         category="COD & RTO"
-        date="July 29, 2026"
+        date="Jul 29, 2026"
         readingTime="6 min read"
         title="Partial payment: convert more COD orders to prepaid"
-        excerpt="How RabbitPay's partial payment feature helps Shopify merchants reduce RTO by asking shoppers to prepay a small share of the order value."
+        excerpt="Learn how partial payments help merchants collect a small amount upfront while keeping the remaining amount payable on delivery."
       />
       <ArticleCard
         href="/blog/otp-verification"
         image="/images/otp-verification.png"
         category="Checkout & Conversion"
-        date="July 29, 2026"
+        date="Jul 29, 2026"
         readingTime="4 min read"
         title="OTP verification at checkout: why it matters"
-        excerpt="How phone number OTP verification during Shopify checkout reduces fake orders, protects merchants from fraud, and improves delivery success."
+        excerpt="Learn how OTP verification helps validate customers, reduce fake COD orders, prevent fraud, and improve delivery success."
       />
     </div>
   </section>
 );
 
 export const CtaSection = () => (
-  <section className="border-t border-gray-200 dark:border-zinc-800">
-    <div className="max-w-4xl mx-auto px-6 lg:px-10 py-20 lg:py-28 text-center">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: "#196BF5" }}>RabbitPay</p>
-      <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-gray-900 dark:text-zinc-50 leading-[1.1]">
-        Build a better checkout experience with RabbitPay.
-      </h2>
-      <p className="mt-5 text-lg text-gray-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-        Follow the RabbitPay Blog for guides on checkout, payments, COD, RTO, and Shopify growth.
-      </p>
-      <div className="mt-8">
-        <a
-          href="https://rabbitpay.ai/"
-          className="inline-flex items-center px-6 py-3 rounded-full text-white font-semibold no-underline"
-          style={{ backgroundColor: "#196BF5" }}
-        >
-          Learn more about RabbitPay
-        </a>
+  <section className="relative">
+    <div className="max-w-6xl mx-auto px-6 lg:px-8 pb-28 lg:pb-36">
+      <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] px-8 lg:px-16 py-16 lg:py-20 text-center">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10"
+          style={{
+            background:
+              "radial-gradient(60% 80% at 50% 0%, rgba(25,107,245,0.18) 0%, rgba(6,9,17,0) 70%), linear-gradient(180deg, #0A0E19 0%, #06090F 100%)"
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-[540px] rounded-full blur-3xl opacity-40"
+          style={{ background: "radial-gradient(closest-side, #196BF5, transparent 70%)" }}
+        />
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em]" style={{ color: "#5B93FF" }}>
+          RabbitPay
+        </p>
+        <h2 className="mt-5 text-3xl md:text-4xl lg:text-[44px] font-semibold tracking-tight text-white leading-[1.1] max-w-3xl mx-auto">
+          Build a better checkout experience with RabbitPay.
+        </h2>
+        <p className="mt-6 text-[17px] text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          Create faster checkout experiences while improving conversion, reducing RTO, and giving customers a better payment experience.
+        </p>
+        <div className="mt-10">
+          <a
+            href="https://rabbitpay.ai/"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white font-semibold no-underline transition-transform hover:-translate-y-0.5"
+            style={{
+              backgroundColor: "#196BF5",
+              boxShadow: "0 10px 30px -10px rgba(25,107,245,0.7), inset 0 1px 0 rgba(255,255,255,0.2)"
+            }}
+          >
+            Explore RabbitPay
+            <span>→</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 );
 
-<Hero />
+<div className="relative min-h-screen text-zinc-100" style={{ backgroundColor: "#06090F" }}>
+  <PageBackground />
 
-<FeaturedSection />
+  <Hero />
 
-<CategoryBar />
+  <FeaturedSection />
 
-<LatestGrid />
+  <CategoryBar />
 
-<CtaSection />
+  <LatestGrid />
+
+  <CtaSection />
+</div>
