@@ -10,16 +10,33 @@
   "navigation": {
     "groups": [
       {
-        "group": "Blog",
+        "group": " ",
         "pages": [
-          "index",
-          "blog/index",
+          "blog/index"
+        ]
+      },
+      {
+        "group": "Articles",
+        "pages": [
           "blog/how-rabbitpay-works",
           "blog/partial-payment",
           "blog/otp-verification"
+        ]
+      },
+      {
+        "group": "Hidden",
+        "pages": [
+          "index"
         ],
         "hidden": true
       }
     ]
-  }
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/blog",
+      "permanent": false
+    }
+  ]
 }
