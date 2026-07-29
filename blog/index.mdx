@@ -44,10 +44,14 @@ export const CategoryChip = ({ label }) => (
   </span>
 );
 
-export const ArticleCard = ({ href, category, date, readingTime, title, excerpt, tone }) => (
+export const ArticleCard = ({ href, category, date, readingTime, title, excerpt, tone, image }) => (
   <a href={href} className="group flex flex-col no-underline">
     <div className="aspect-[16/9] w-full">
-      <CoverPlaceholder tone={tone} rounded="rounded-2xl" />
+      {image ? (
+        <img src={image} alt={title} className="w-full h-full object-cover rounded-2xl" />
+      ) : (
+        <CoverPlaceholder tone={tone} rounded="rounded-2xl" />
+      )}
     </div>
     <div className="mt-5 flex flex-col flex-1">
       <div className="flex items-center gap-3 text-xs">
@@ -69,7 +73,7 @@ export const FeaturedStory = () => (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
       <div className="lg:col-span-7">
         <div className="aspect-[16/10] w-full">
-          <CoverPlaceholder tone="a" rounded="rounded-3xl" />
+          <img src="/images/how-rabbitpay-works.png" alt="How RabbitPay works" className="w-full h-full object-cover rounded-3xl" />
         </div>
       </div>
       <div className="lg:col-span-5 flex flex-col">
@@ -142,7 +146,7 @@ export const LatestGrid = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
       <ArticleCard
         href="/blog/how-rabbitpay-works"
-        tone="a"
+        image="/images/how-rabbitpay-works.png"
         category="RabbitPay Updates"
         date="July 29, 2026"
         readingTime="5 min read"
@@ -151,7 +155,7 @@ export const LatestGrid = () => (
       />
       <ArticleCard
         href="/blog/partial-payment"
-        tone="c"
+        image="/images/partial-payment.png"
         category="COD & RTO"
         date="July 29, 2026"
         readingTime="6 min read"
@@ -160,7 +164,7 @@ export const LatestGrid = () => (
       />
       <ArticleCard
         href="/blog/otp-verification"
-        tone="b"
+        image="/images/otp-verification.png"
         category="Checkout & Conversion"
         date="July 29, 2026"
         readingTime="4 min read"
