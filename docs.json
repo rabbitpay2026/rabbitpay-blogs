@@ -20,7 +20,8 @@
         "pages": [
           "blog/how-rabbitpay-works",
           "blog/partial-payment",
-          "blog/otp-verification"
+          "blog/otp-verification",
+          "blog/reduce-rto"
         ]
       },
       {
