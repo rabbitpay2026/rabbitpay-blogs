@@ -21,6 +21,11 @@
         ]
       },
       {
+        "group": "RTO Suite guide",
+        "icon": "shield-halved",
+        "pages": []
+      },
+      {
         "group": " ",
         "pages": [
           "blog/index"
