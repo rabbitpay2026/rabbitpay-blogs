@@ -41,7 +41,9 @@
           "help/rto/phone-numbers",
           "help/rto/cod-availability",
           "help/rto/risk-engine",
-          "help/rto/setup"
+          "help/rto/setup",
+          "help/rto/troubleshooting",
+          "help/rto/orders-reporting"
         ]
       },
       {

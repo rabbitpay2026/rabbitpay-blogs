@@ -1,0 +1,62 @@
+---
+title: "Orders, payments and reporting"
+sidebarTitle: "Orders & reporting"
+description: "See advance and balance amounts, refund advances, and track prepaid vs COD orders."
+icon: "chart-line"
+keywords:
+  - "orders"
+  - "advance paid"
+  - "balance due"
+  - "refund advance"
+  - "order logs"
+  - "reporting"
+  - "prepaid cod split"
+---
+
+<Frame caption="Orders: payment status, RTO risk and amount paid">
+  <img src="/images/rto/orders-list.png" alt="Orders list with Payment status, RTO risk and Amount paid columns highlighted" />
+</Frame>
+
+### Where can I see the orders paid in advance?
+
+In **Orders**, the **Payment** column shows **Partially Paid** for advance orders and **Paid** for prepaid. **Logs → Order Logs** shows counts of **Prepaid**, **COD** and **Partial** orders.
+
+### How do I know how much a customer paid online?
+
+In **Orders**, the **Amount** column shows what was paid online, with "of ₹total" under it when it's a part payment. Open the order to see the paid transaction and gateway.
+
+### How do I know how much is left to collect on delivery?
+
+Open the order: the **Payment** card shows **Balance due (COD)**. The Shopify order note also says "Collect on delivery: ₹…".
+
+### How can I see if my rules are reducing returns?
+
+Track the split in **Logs → Order Logs** (Prepaid / COD / Partial / Cancelled) over time, and watch the **RTO risk** column in **Orders**. Compare your RTO before and after a change to your rules.
+
+<Frame caption="Logs: Order Logs, Message Logs, Usage Charges and Abandoned Carts">
+  <img src="/images/rto/logs.png" alt="Logs page with its tabs highlighted" />
+</Frame>
+
+### Where can I check my COD and prepaid orders?
+
+**Orders** (Payment column and filters) or **Logs → Order Logs**, which shows each order's payment type and the totals.
+
+### What happens to the advance if the customer refuses delivery?
+
+RabbitPay doesn't refund it automatically. Whether to refund is up to you, under your store's policy. If you do, refund it from **Orders** (next question).
+
+### How do I refund an advance payment?
+
+Open the order in **Orders** → **Refund** card → **Refund**. Enter the amount (up to what was paid online) and an optional reason, then confirm. It goes back to the customer's original payment method, typically in 5–7 business days (UPI is often instant). The COD balance was paid in cash, so it can't be refunded from here.
+
+### Where do I see my online payments received?
+
+In **Orders** (the **Amount** column and each order's Payment card). The money settles in your own payment gateway account (Razorpay, PayU or Cashfree), so you can also see it in the gateway's dashboard.
+
+### How do I see which rule a customer used?
+
+There's no separate "rule" column yet. Partial orders carry a note such as "Partial COD — 25% advance paid online" and the tag `PARTIAL_COD_RABBIT_PAY` in Shopify. Prepaid orders with a rule discount show it as "Prepaid discount". COD orders show the gateway as **COD**.
+
+### Where can I see my order logs?
+
+**Logs → Order Logs**. Other tabs show **Message Logs**, **Usage Charges** and **Abandoned Carts**.
