@@ -10,6 +10,11 @@
   "navigation": {
     "groups": [
       {
+        "group": "Help Center",
+        "icon": "life-ring",
+        "pages": []
+      },
+      {
         "group": " ",
         "pages": [
           "blog/index"
