@@ -21,6 +21,32 @@
         ]
       },
       {
+        "group": "RTO Suite guide",
+        "icon": "shield-halved",
+        "pages": [
+          "help/rto/manage-rules",
+          "help/rto/rule-order",
+          "help/rto/amount-types",
+          "help/rto/full-payment",
+          "help/rto/partial-payment",
+          "help/rto/cod-rule",
+          "help/rto/cod-fee",
+          "help/rto/discounts",
+          "help/rto/shipping",
+          "help/rto/payment-methods",
+          "help/rto/cart-value",
+          "help/rto/products",
+          "help/rto/collections",
+          "help/rto/pincodes",
+          "help/rto/phone-numbers",
+          "help/rto/cod-availability",
+          "help/rto/risk-engine",
+          "help/rto/setup",
+          "help/rto/troubleshooting",
+          "help/rto/orders-reporting"
+        ]
+      },
+      {
         "group": " ",
         "pages": [
           "blog/index"

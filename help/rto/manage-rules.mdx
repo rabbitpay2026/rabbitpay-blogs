@@ -1,0 +1,97 @@
+---
+title: "Creating and managing payment rules"
+sidebarTitle: "Create & manage rules"
+description: "Add, edit, rename, switch off and delete payment rules in RTO Suite."
+icon: "list-check"
+keywords:
+  - "payment rule"
+  - "add rule"
+  - "edit rule"
+  - "delete rule"
+  - "disable rule"
+  - "rto suite"
+---
+
+A **payment rule** is one payment option at checkout, such as "Pay 20% now, rest on delivery" or "Cash on Delivery". You manage them all in **RTO Suite → Payment rules**.
+
+<Frame caption="RTO Suite → Payment rules">
+  <img src="/images/rto/rto-list.png" alt="Payment rules card with the Add payment rule button and search box highlighted" />
+</Frame>
+
+<Frame caption="Each row has reorder arrows, Edit and Delete">
+  <img src="/images/rto/rto-row-actions.png" alt="Rule rows with the reorder arrows, edit pencil and delete icon highlighted" />
+</Frame>
+
+### How do I add a new payment rule?
+
+1. Go to **RTO Suite** and click **Add payment rule**.
+2. Enter a **Rule name** and pick the **Amount type** (Percentage, Fixed amount, Full payment or COD).
+3. Set the amount and any conditions you need (cart range, products, pincodes and so on).
+4. Keep **Rule enabled** on and click **Create rule**.
+
+<Frame caption="Bottom of the rule form">
+  <img src="/images/rto/rule-enabled-save.png" alt="Rule enabled switch and Create rule button highlighted" />
+</Frame>
+
+### How do I edit a rule I already made?
+
+Click the **pencil** icon on the rule's row (or click its name), change what you need, then click **Save changes**.
+
+### How do I delete a rule?
+
+Click the red **trash** icon on the rule's row, then click **Delete** in the confirmation box. Checkout stops offering that option straight away.
+
+<Frame caption="Delete confirmation">
+  <img src="/images/rto/rto-delete-dialog.png" alt="Delete this rule? confirmation dialog" />
+</Frame>
+
+### How do I turn a rule off without deleting it?
+
+Open the rule, switch **Rule enabled** off and click **Save changes**. The rule stays in your list but shoppers don't see it.
+
+### I turned off a rule, is it gone for good?
+
+No. "Off" means **saved but hidden at checkout**. Switch **Rule enabled** back on whenever you want it again. Only **Delete** removes a rule permanently.
+
+### How do I rename a rule?
+
+Open the rule, change the **Rule name** field and click **Save changes**.
+
+### What name should I give a rule, will customers see it?
+
+Yes, shoppers see the rule name as the payment option's title at checkout. Use clear, shopper-friendly wording, for example "Pay 10% now & rest COD".
+
+### Can I make more than one rule?
+
+Yes. Most stores have a few: for example a full payment rule, one or two partial payment rules and a COD rule.
+
+### Is there a limit on how many rules I can have?
+
+No, there's no limit.
+
+### How do I find a rule quickly?
+
+Type part of its name in **Search payment rules…** above the list.
+
+### I saved my rule but customers can't see it, why?
+
+Check these in order:
+
+1. **Rule enabled** is on.
+2. The cart matches the rule's conditions: **cart range**, **products**, **collections**, **pincode** and **phone** lists.
+3. Only the **first** matching **Full payment** rule and the **first** matching **COD** rule are used. A second one of the same type won't show.
+4. The shopper started a **fresh checkout**. An already-open checkout tab keeps the rules it loaded, so test in a new tab or incognito window.
+
+See [Troubleshooting](/help/rto/troubleshooting) for more.
+
+### Why is my new rule not showing at checkout?
+
+Same checks as above. The most common causes are a cart range the test cart doesn't meet, and testing in a checkout tab that was already open before you saved.
+
+### Do I have to save every time I change something?
+
+Yes. Changes only apply after you click **Create rule** or **Save changes**. If you leave with unsaved edits, a bar at the top warns you and offers **Discard** or save.
+
+### Can I copy an existing rule to make a new one?
+
+There's no copy button yet. Click **Add payment rule** and enter the same settings again.

@@ -1,0 +1,62 @@
+---
+title: "COD fee"
+sidebarTitle: "COD fee"
+description: "Add, change or remove the COD fee, and choose whether it's paid upfront or on delivery."
+icon: "receipt"
+keywords:
+  - "cod fee"
+  - "cod charges"
+  - "include cod fee"
+  - "cod fee upfront"
+  - "cod fee on delivery"
+---
+
+You can charge a COD fee in two places:
+
+- in a **COD** rule (the **COD fee** field next to Amount type);
+- in a **partial payment** rule, under **Partial COD fee**.
+
+<Frame caption="Partial COD fee: switch it on, then choose when it's paid">
+  <img src="/images/rto/partial-cod-fee.png" alt="Include COD fee switch and the On delivery / Upfront options highlighted" />
+</Frame>
+
+### How do I add a COD fee?
+
+- **COD rule:** open it, choose how the fee is calculated (**Fixed amount**, **Percentage of order value**, or **Whichever is higher**) and enter the amount.
+- **Partial payment rule:** turn on **Include COD fee**, choose when it's collected, how it's calculated, and the amount.
+
+### What does include COD fee mean?
+
+It's the switch in **Partial COD fee** that adds a COD fee to a partial payment rule. Partial rules never borrow the fee from your COD rule; you set it here.
+
+### Can customers pay the COD fee online instead of on delivery?
+
+Yes, for partial payment rules. Under **Collect the COD fee**, choose **Upfront, with the advance**. The fee is added to the amount paid online now.
+
+### How do I make the COD fee payable on delivery?
+
+Choose **On delivery (default)**. The fee is added to the balance the courier collects. The total is the same either way.
+
+### How do I make the COD fee payable upfront?
+
+Choose **Upfront, with the advance** under **Collect the COD fee**.
+
+### How do I remove the COD fee?
+
+COD rule: clear the fee or set it to 0. Partial rule: switch **Include COD fee** off, or leave the amount blank or 0. Then save.
+
+### Can I charge a COD fee on partial payment orders too?
+
+Yes. That's what **Include COD fee** in the partial rule is for.
+
+### What happens if I leave the COD fee empty?
+
+No COD fee is added ("Blank or 0 = no COD fee").
+
+### Why is the COD fee not showing for customers?
+
+Check that the amount isn't blank or 0, that **Include COD fee** is on (partial rules), and that you saved. With **Percentage of order value**, the fee is worked out on the order total including tax and shipping, so very small orders may get a small fee. **Whichever is higher** charges the larger of your fixed amount and the percentage.
+
+### How do I show the COD fee in the payment description?
+
+In a partial rule's **Custom description (optional)**, insert `{cod_fee}`. For example: `Pay {pay_now} now, {pay_later} on delivery (incl. {cod_fee} COD fee)`.

@@ -1,0 +1,85 @@
+---
+title: "Partial payment (advance + pay on delivery)"
+sidebarTitle: "Partial payment"
+description: "Ask shoppers to pay part of the order online and the rest on delivery."
+icon: "chart-pie"
+keywords:
+  - "partial payment"
+  - "advance"
+  - "token amount"
+  - "pay now pay later"
+  - "partial cod"
+---
+
+With **partial payment** the shopper pays an advance online and the rest on delivery. Shoppers who have paid something are much more likely to accept the parcel.
+
+<Frame caption="A Percentage rule: the Amount is the advance">
+  <img src="/images/rto/amount-percentage.png" alt="Amount type Percentage and Amount field highlighted" />
+</Frame>
+
+### How does partial payment work?
+
+You create a **Percentage** or **Fixed amount** rule. At checkout it appears as an option; the shopper pays the advance online through your gateway, and the order is created in Shopify as **partially paid** with the balance due on delivery.
+
+### How do I ask customers to pay some amount now and the rest on delivery?
+
+1. **RTO Suite → Add payment rule**.
+2. Name it, e.g. "Pay 20% now, rest on delivery".
+3. **Amount type**: **Percentage** (enter 20) or **Fixed amount** (enter e.g. 199).
+4. Click **Create rule**.
+
+### How do I set the advance amount?
+
+It's the **Amount** field of the rule: a percentage for Percentage rules, rupees for Fixed amount rules.
+
+### Can I change how much customers pay in advance?
+
+Yes. Edit the rule, change **Amount** and save.
+
+### Can I take a percentage as advance instead of a fixed amount?
+
+Yes. Set **Amount type** to **Percentage**.
+
+### Will partial payment actually reduce my returns?
+
+It usually does, because shoppers who have paid an advance are far less likely to refuse delivery. Watch your RTO in **Logs → Order Logs** (it splits Prepaid, COD and Partial) and the **RTO risk** column in **Orders**.
+
+### How do I stop asking for advance payment?
+
+Switch **Rule enabled** off on the partial rule (or delete it).
+
+### Can I use partial payment only on some orders?
+
+Yes. Add conditions: **Cart range**, **Applies to** (products), **Collections**, pincode or phone lists.
+
+### How do I show partial payment only for risky areas?
+
+Use **Enable zipcode whitelisting** on the partial rule and list the risky pincodes. Pair it with a COD rule that blocks those same pincodes, so shoppers there must pay an advance. See [Pincode restrictions](/help/rto/pincodes).
+
+### What does the customer see for the remaining amount?
+
+By default the option shows how much is paid now and how much on delivery. You can write your own wording in **Custom description (optional)**.
+
+### Can I change the text customers see for pay now and pay later?
+
+Yes. Use **Custom description (optional)** in the rule (Percentage and Fixed amount rules only). Each line shows on its own line.
+
+### How do I show pay now and pay later amounts in the description?
+
+Click the chips under the description box to insert live amounts: `{pay_now}`, `{pay_later}`, `{total}`, `{item_total}`, `{discount}`, `{shipping}`, `{tax}`, `{cod_fee}`. For example: `Pay {pay_now} now, {pay_later} on delivery`.
+
+<Frame caption="Custom description with amount placeholders">
+  <img src="/images/rto/description.png" alt="Custom description box and placeholder chips highlighted" />
+</Frame>
+
+### Why is partial payment not showing at checkout?
+
+Check **Rule enabled**, the rule's conditions (cart range, products, collections, pincode, phone), that your payment gateway is connected and enabled, and that you're testing in a fresh checkout tab.
+
+### How do I find out how much advance a customer paid?
+
+In **Orders**, the **Amount** column shows what was paid, with "of ₹total" under it when it's a part payment. Open the order to see the paid transaction. In Shopify, the order note shows "Paid online: ₹X".
+
+### Where can I see the remaining amount for an order?
+
+Open the order in **Orders**: the Payment card shows **Balance due (COD)**. In Shopify, the order note shows "Collect on delivery: ₹Y".

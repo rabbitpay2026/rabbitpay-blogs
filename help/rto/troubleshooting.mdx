@@ -1,0 +1,95 @@
+---
+title: "Troubleshooting payment rules"
+sidebarTitle: "Troubleshooting"
+description: "Fixes for rules, COD, discounts and restrictions that don't behave as expected."
+icon: "wrench"
+keywords:
+  - "troubleshooting"
+  - "rule not showing"
+  - "cod not showing"
+  - "discount not applying"
+  - "pincode not working"
+  - "checkout old options"
+---
+
+<Tip>**First check for almost everything:** test in a **new incognito window**. Checkout keeps the rules it loaded for as long as that browser tab is open, so an old tab won't show your latest changes.</Tip>
+
+### My payment rule is not showing at checkout, what should I check?
+
+1. **Rule enabled** is on, and you saved.
+2. **Cart range**: the cart total before discounts, without shipping or tax, is inside Min–Max.
+3. **Applies to / Collections**: with **Only selected**, every cart product must match unless **Match any product in cart** is ticked.
+4. **Pincode / phone lists**: they need the address or verified phone, and allow lists hide the rule for everyone else.
+5. Only the **first** matching Full payment rule and the **first** matching COD rule are used.
+6. Test in a **fresh tab**.
+
+### Customers are seeing the wrong payment option, why?
+
+Check your rule order, **Customization → Payments → Payment method order** (a custom order overrides rule order), and whether a higher rule of the same type is matching first.
+
+### COD is showing even after I blocked it, why?
+
+- Pincode blocks apply only once the address is entered.
+- Phone blocks match the **verified OTP number** (last 10 digits).
+- You may have a **second COD rule** without the block. Only the first matching COD rule is used, so if the first is blocked a lower one can take over.
+- The checkout tab was open before your change.
+
+### COD is not showing even though I turned it on, why?
+
+Check the COD rule's cart range, product, collection, pincode and phone conditions, and **Max items for COD**. Also check the Return-risk engine's **Grey out COD for high-risk customers**.
+
+### My discount is not applying on the rule, what's wrong?
+
+Both **Discount code** and **Discount value** must be filled in. The discount applies only when the shopper picks that option. For COD, check the **Applicable discounts on COD** switches. See [Discounts](/help/rto/discounts).
+
+### Shipping is not being added to the advance, why?
+
+Switch on **Collect shipping charge upfront** in the partial rule. It exists only on Percentage and Fixed amount rules. See [Shipping charges](/help/rto/shipping).
+
+### My pincode block is not working, what do I do?
+
+Make sure the list is ticked and saved, ranges have the same number of digits on both sides, and the shopper has entered the address. Remember that a ticked but empty **allow list** restricts nothing.
+
+### My phone number block is not working, what do I do?
+
+Use the shopper's **verified login number**. Formatting doesn't matter, because only the last 10 digits are compared. Make sure the list is ticked and saved.
+
+### I made changes but checkout still shows the old options, why?
+
+The checkout tab loaded your rules earlier and keeps them while it stays open. Open the store in a **new incognito window** or a new browser session.
+
+### Two rules are showing together, is this normal?
+
+Yes, for **partial payment** rules: every matching one is offered as its own option. If you want only one, add cart range or other conditions so they don't overlap, or switch one off.
+
+### No payment option is showing for my customers, what do I do?
+
+Your rules' conditions may exclude that cart entirely. Keep at least one rule (usually Full payment) with no restrictions. Also check that your gateway is connected and **Enabled** in **Settings → Payments**.
+
+### Customers say they can't pay the advance, what should I check?
+
+Check **Settings → Payments**: the gateway must be **Enabled**, with live keys and the right environment (Production for live keys). See [Connect your payment gateway](/help/payments).
+
+### Customers paid the advance but the order shows as COD, is that right?
+
+Yes, that's expected. A partial order is created as **partially paid**: the advance is recorded as paid, and the rest is the COD balance. Open the order in **Orders** to see **Balance due (COD)**. The Shopify order note shows the amount paid online and the amount to collect.
+
+### Why do some customers see COD and others don't?
+
+Your COD rule's conditions differ per shopper: cart value, products, pincode, phone, item count, or the Return-risk engine greying it out for high-risk shoppers.
+
+### My product restriction is not working, why?
+
+With **Only selected**, every product in the cart must be in your list. Tick **Match any product in cart** if one match should be enough. With **All except selected**, one listed product hides the rule.
+
+### My collection restriction is not working, why?
+
+Same logic as products. Also, collection changes can take up to about 10 minutes to be picked up.
+
+### The cart limit is not working the way I expected, why?
+
+Cart range uses the total **before discounts, without shipping or tax**, and both limits are inclusive.
+
+### How do I contact support if my rules are not working?
+
+Click **Talk to a person** in the **RabbitAI** panel, or use the chat bubble in your dashboard. Include your store domain and the rule name.

@@ -1,0 +1,93 @@
+---
+title: "Setting up RTO Suite"
+sidebarTitle: "Setup & configuration"
+description: "A recommended starting setup, testing your rules, and where related settings live."
+icon: "gear"
+keywords:
+  - "setup"
+  - "best rules"
+  - "test rules"
+  - "preview checkout"
+  - "configuration"
+  - "shopify"
+---
+
+### What is the best way to set up payment rules for a new store?
+
+Start simple and measure:
+
+1. **Full payment** with a small discount (e.g. 5%), at the top.
+2. **Partial payment**, e.g. "Pay 10% now, rest on delivery".
+3. **COD**, optionally with a small COD fee and **Max items for COD**.
+4. Turn on the **Return-risk engine** and watch scores for a few days.
+
+### Which rules should I create first?
+
+A **COD** rule (so COD keeps working) and a **Full payment** rule (so prepaid works). Then add partial payment rules.
+
+### How do I set up COD with advance payment step by step?
+
+1. **RTO Suite → Add payment rule**.
+2. Name: "Pay 10% now, rest COD". **Amount type**: Percentage, **Amount**: 10.
+3. Optional: **Include COD fee**, **Collect shipping charge upfront**, a custom description.
+4. **Create rule**, then move it to where you want it in the list.
+
+See [Partial payment](/help/rto/partial-payment).
+
+### How do I set up a rule so only risky customers pay in advance?
+
+- **By area:** a partial rule with a pincode **allow list** of risky pincodes, plus the same pincodes in your COD rule's **block list**.
+- **By customer:** add repeat-refusers to the COD rule's **phone block list**.
+- **Automatically:** turn on the Return-risk engine and **Grey out COD for high-risk customers**. Those shoppers can still use your partial or full payment options.
+
+### How do I set different rules for different areas?
+
+Use **Zipcode restrictions**: an allow list on one rule and a block list on another. See [Pincode restrictions](/help/rto/pincodes).
+
+### How do I test my rules before customers see them?
+
+There's no draft mode, so test safely:
+
+- Restrict the new rule to **your own phone** with **Enable phone number whitelisting**, then test with that number.
+- Open your store in a **new incognito window** each time; an already-open checkout keeps old rules.
+- Remove the phone restriction when you're happy.
+
+### How can I preview what my checkout looks like?
+
+**Customization** has a **Live preview** of the checkout that updates as you edit.
+
+<Frame caption="Customization → Payments with the live preview">
+  <img src="/images/rto/customization-payments.png" alt="Customization Payments tab with the live preview" />
+</Frame>
+
+### Can I change the wording customers see under each payment option?
+
+Yes, for partial payment rules: **Custom description (optional)**, with placeholders like `{pay_now}` and `{pay_later}`. For any rule, the **Rule name** is the option's title.
+
+### How do I change the checkout design?
+
+In **Customization**: logo, colours, fonts, promo banner, address steps and the payment step. Use **Live preview** to check, then **Save**.
+
+### How do I connect my payment gateway?
+
+**Settings → Payments**: configure Razorpay, PayU or Cashfree and switch it to **Enabled**. See [Connect your payment gateway](/help/payments).
+
+### Where do I set up my online payment methods?
+
+In your **Full payment** rule's **Payment methods** (UPI, Cards, Wallets, NetBanking, EMI). The order is set in **Customization → Payments → Payment method order**.
+
+### Do I need to do anything in Shopify for these rules to work?
+
+No. Rules work inside RabbitPay checkout. Just make sure RabbitPay checkout is switched on for your products (**Settings → Checkout Type**).
+
+### Will these rules work with my Shopify checkout?
+
+No. They apply only to **RabbitPay checkout**. Products set to use your normal Shopify checkout (in **Checkout Type**) don't see these rules.
+
+### Do these rules work with my Shopify discounts?
+
+Yes. Shopify discount codes and automatic discounts keep working; for COD you can switch them off. See [Discounts](/help/rto/discounts).
+
+### Can other team members edit the rules?
+
+Not yet. **Settings → Users & Permissions** (staff invites and roles) is coming soon. For now, rules are managed from the store owner's dashboard login.
