@@ -12,7 +12,10 @@
       {
         "group": "Help Center",
         "icon": "life-ring",
-        "pages": []
+        "pages": [
+          "help/getting-started",
+          "help/checkout-settings"
+        ]
       },
       {
         "group": " ",

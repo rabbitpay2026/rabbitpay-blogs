@@ -1,0 +1,71 @@
+---
+title: "Checkout settings"
+sidebarTitle: "Checkout settings"
+description: "Choose which products open RabbitPay checkout, and the checkout options you can turn on for your store."
+icon: "cart-shopping"
+keywords:
+  - "checkout type"
+  - "products"
+  - "collections"
+  - "scope"
+  - "otp"
+  - "upi"
+  - "address"
+  - "gst"
+---
+
+## Choose which products use RabbitPay checkout
+
+Go to **Settings → Checkout Type**. The **Where RabbitPay checkout appears** card controls which products open RabbitPay checkout. Everything else uses your normal Shopify checkout.
+
+| Option | What happens |
+|---|---|
+| **All products** (default) | Every cart opens RabbitPay checkout. |
+| **Only selected products** | Only carts with at least one of the products or collections you pick open RabbitPay checkout. |
+| **All except selected products** | Every product uses RabbitPay checkout except the products or collections you pick. |
+
+<Steps>
+  <Step title="Pick a mode">
+    Under **Products**, choose one of the three options.
+  </Step>
+  <Step title="Select products or collections">
+    For the two "selected" options, click **Pick** next to **Products** or **Collections** and choose items from your Shopify catalogue.
+  </Step>
+  <Step title="Save">
+    Click **Save**. Click **Discard** to go back to what was saved before.
+  </Step>
+</Steps>
+
+**Things to know**
+
+- **Mixed carts open RabbitPay.** If the cart contains *any* selected product, the whole cart goes through RabbitPay checkout.
+- **Collections stay up to date.** Products you add to a selected collection later are covered automatically.
+- **Nothing selected means nothing shows.** If you choose **Only selected products** and pick nothing, RabbitPay checkout won't appear on any product. The page warns you when this happens.
+
+## Checkout options
+
+These options change what shoppers see at checkout. Our team sets them up with you during onboarding. To change one, contact support.
+
+| Option | What it does |
+|---|---|
+| SMS OTP button / WhatsApp OTP button | Which channels shoppers can get their login OTP on |
+| Send OTP on SMS and WhatsApp | Sends the OTP on both channels at once, so it arrives even if one is slow. Each message is billed in its own channel. |
+| Remember signed-in customers | Returning shoppers skip the OTP on the same device |
+| Always ask for the address | Shows address selection even when a saved address exists |
+| Show UPI QR / Recommended UPI apps | How UPI is offered on the payment step |
+| Price breakdown on payment options | Shows how much is paid now and on delivery for each option |
+| Offers & rewards block / Promo banner | Shows available offers and a promo banner at checkout |
+| Order notes | Lets shoppers add a note to the order |
+| Collect GST number | Lets business buyers enter a GSTIN for the invoice |
+| Optimized Buy Now | Faster checkout from the product page's Buy Now button |
+| Skip courier shipping-rate lookup | Faster checkout by skipping the live courier rate lookup in Shopify |
+| Google Analytics | Sends checkout events to your Google Analytics |
+
+<Tip>
+  To show or hide individual payment methods (for example UPI or cards) on the payment step, use **Customization**.
+</Tip>
+
+## Related
+
+- [Payments](/help/payments): connect the gateway that collects prepaid payments.
+- [RTO Suite](/help/rto-suite): decide which payment options each cart gets.
