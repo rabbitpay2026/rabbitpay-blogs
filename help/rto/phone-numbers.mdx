@@ -1,0 +1,63 @@
+---
+title: "Phone number restrictions"
+sidebarTitle: "Phone restrictions"
+description: "Block or allow payment rules for specific customers by phone number."
+icon: "phone"
+keywords:
+  - "phone number"
+  - "block customer"
+  - "block cod phone"
+  - "allow list"
+  - "regular customers"
+---
+
+Each rule has two phone lists under **Phone number restrictions**:
+
+- **Enable phone number restrictions**: a **block list**. The rule is **hidden** for these numbers.
+- **Enable phone number whitelisting**: an **allow list**. The rule shows **only** for these numbers.
+
+<Frame caption="Phone number restrictions with both lists switched on">
+  <img src="/images/rto/phones.png" alt="Phone numbers to hide this rule and Phone numbers allowed to see this rule highlighted" />
+</Frame>
+
+Numbers are matched against the shopper's **verified (OTP) phone number** using the **last 10 digits**.
+
+### Can I block COD for certain phone numbers?
+
+Yes. In your **COD** rule, tick **Enable phone number restrictions** and add the numbers.
+
+### How do I stop customers who keep returning orders?
+
+Add their numbers to the COD rule's block list. They can still pay online or with an advance. The [Return-risk engine](/help/rto/risk-engine) can also flag risky customers automatically.
+
+### How do I allow COD only for some phone numbers?
+
+In the COD rule, tick **Enable phone number whitelisting** and list the numbers. Only they see COD.
+
+### What is the difference between blocking and allowing numbers?
+
+Blocking hides the rule for listed numbers; everyone else sees it. Allowing shows it **only** for listed numbers.
+
+### How do I add phone numbers to a rule?
+
+Tick the list and type numbers separated by commas or new lines. Save.
+
+### Can I add many numbers at once?
+
+Yes. Paste them separated by commas or new lines.
+
+### How do I remove a number from the list?
+
+Delete it from the box and save.
+
+### Can I give special payment options to my regular customers?
+
+Yes. Create a rule (e.g. a special discount or a COD option) and use **Enable phone number whitelisting** with your regular customers' numbers.
+
+### Why is my phone number rule not working?
+
+Check that the list is ticked and saved, that you're testing with the **verified login phone** (not just a number typed in the address), and that you're in a fresh checkout tab.
+
+### In what format should I add phone numbers?
+
+Any format works. Country code and spaces are optional, because only the last 10 digits are matched: `+91 98765 43210` and `9876543210` are the same.

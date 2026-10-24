@@ -1,0 +1,70 @@
+---
+title: "COD availability and order limits"
+sidebarTitle: "COD availability & limits"
+description: "Grey out COD instead of hiding it, show a message, and limit COD by number of items."
+icon: "ban"
+keywords:
+  - "cod greyed out"
+  - "cod disabled message"
+  - "max items for cod"
+  - "cod limit"
+  - "hide cod"
+---
+
+A **COD** rule has a **COD availability** section that controls what happens when COD isn't allowed.
+
+<Frame caption="COD availability in a COD rule">
+  <img src="/images/rto/cod-availability.png" alt="Show COD as disabled when blocked switch, message and Max items for COD highlighted" />
+</Frame>
+
+### How do I show COD as disabled instead of hiding it?
+
+In your COD rule, turn on **Show COD as disabled when blocked**. When COD is blocked for a product or pincode, shoppers see it greyed out with a message.
+
+### What is the difference between hiding COD and greying it out?
+
+**Hidden**: the COD option doesn't appear at all. **Greyed out**: it's visible but can't be selected, with a short explanation, so shoppers understand why and pay online instead.
+
+### Can I show a message when COD is blocked?
+
+Yes. With **Show COD as disabled when blocked** on, write it in **Message shown on the disabled COD option**. The default is "Cash on Delivery isn't available for this item or in your area".
+
+### Why is COD greyed out for my customers?
+
+One of these:
+
+- the cart is over **Max items for COD**;
+- a product, collection or pincode blocks COD and **Show COD as disabled when blocked** is on;
+- the **Return-risk engine** flagged the shopper and **Grey out COD for high-risk customers** is on. Shoppers then see "Cash on Delivery isn't available for this order. You can pay online to place it."
+
+### How do I stop COD from being greyed out?
+
+Fix the cause above: raise or clear **Max items for COD**, remove the product, collection or pincode block, or switch off the risk engine's grey-out. If you'd rather hide COD than grey it out, switch **Show COD as disabled when blocked** off.
+
+### How do I limit the number of items for COD?
+
+Enter a number in **Max items for COD**, e.g. 3.
+
+### What does max items for COD mean?
+
+It's the most items (total quantity, not different products) a COD order can have. Above it, COD is greyed out and only prepaid is available.
+
+### Can I stop COD for big orders?
+
+Yes. By **items**, use **Max items for COD**. By **value**, set a **Max cart total** on the COD rule.
+
+### What happens when the cart has more items than the limit?
+
+COD is shown greyed out with your limit message, and the shopper can pay online. In the message you can use `{max_quantity}` for the limit.
+
+### How do I remove the item limit for COD?
+
+Clear **Max items for COD** (blank = no limit) and save.
+
+### Why does COD disappear when customers add more items?
+
+The cart went over **Max items for COD**, or above the COD rule's **Max cart total**.
+
+### Will customers still be able to pay online when COD is blocked?
+
+Yes. Blocking COD never blocks the order; prepaid and partial options stay available.

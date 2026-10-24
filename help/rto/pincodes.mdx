@@ -1,0 +1,78 @@
+---
+title: "Pincode (zipcode) restrictions"
+sidebarTitle: "Pincode restrictions"
+description: "Block or allow payment rules by delivery pincode."
+icon: "location-dot"
+keywords:
+  - "pincode"
+  - "zipcode"
+  - "block cod pincode"
+  - "allow list"
+  - "whitelist"
+  - "areas"
+---
+
+Each rule has two pincode lists under **Zipcode restrictions**:
+
+- **Enable zipcode restrictions**: a **block list**. The rule is **hidden** for these pincodes.
+- **Enable zipcode whitelisting**: an **allow list**. The rule shows **only** for these pincodes.
+
+<Frame caption="Zipcode restrictions with both lists switched on">
+  <img src="/images/rto/zipcodes.png" alt="Zipcodes to hide this rule and Zipcodes allowed to see this rule highlighted" />
+</Frame>
+
+<Note>Pincode lists are checked once the shopper enters a delivery address. Until then the rule isn't hidden.</Note>
+
+### How do I block COD for certain pincodes?
+
+In your **COD** rule, tick **Enable zipcode restrictions** and enter the pincodes under **Zipcodes to hide this rule**. Save.
+
+### How do I allow COD only in some areas?
+
+In your COD rule, tick **Enable zipcode whitelisting** and list the allowed pincodes. Everyone else won't see COD.
+
+### How do I stop COD in areas with too many returns?
+
+Add those pincodes to the COD rule's block list. You can also turn on the [Return-risk engine](/help/rto/risk-engine), which scores pincodes automatically.
+
+### What is the difference between blocking and allowing pincodes?
+
+Blocking hides the rule for the listed pincodes; everyone else sees it. Allowing shows the rule **only** for the listed pincodes; everyone else doesn't.
+
+### How do I add pincodes to a rule?
+
+Tick the list you want and type pincodes separated by **commas or new lines**.
+
+### Can I add many pincodes at once?
+
+Yes. Paste them separated by commas or new lines. You can also use **ranges** like `400001-400010` (both ends must have the same number of digits).
+
+### How do I remove a pincode from the list?
+
+Delete it from the box and save. To stop using the list completely, untick it.
+
+### How do I show a rule only for some locations?
+
+Use **Enable zipcode whitelisting** on that rule.
+
+### How do I hide a rule for some locations?
+
+Use **Enable zipcode restrictions** on that rule.
+
+### Can I ask for advance payment only in some areas?
+
+Yes. Give a partial payment rule an **allow list** of those pincodes, and give the COD rule a **block list** with the same pincodes. Shoppers there must pay an advance; others still get COD.
+
+### Why is my pincode rule not working?
+
+Check that:
+
+- the list is ticked and saved;
+- the shopper has entered their address (lists are checked only then);
+- ranges have the same number of digits on both sides;
+- an **allow list** that's ticked but empty restricts nothing;
+- you're testing in a fresh checkout tab.
+
+### Can I use both blocking and allowing at the same time?
+
+Yes. A pincode must then be **on the allow list and not on the block list** for the rule to show.

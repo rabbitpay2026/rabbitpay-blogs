@@ -1,0 +1,64 @@
+---
+title: "Collection restrictions"
+sidebarTitle: "Collection restrictions"
+description: "Show or hide a payment rule based on the Shopify collections in the cart."
+icon: "layer-group"
+keywords:
+  - "collections"
+  - "collection rules"
+  - "hide for selected"
+  - "disable cod for collection"
+---
+
+The **Collections** section works like product restrictions, but uses your Shopify collections, so new products in a collection are covered automatically.
+
+<Frame caption="Collections: pick a mode, then Select collections">
+  <img src="/images/rto/collections.png" alt="Hide for selected option and Select collections button highlighted" />
+</Frame>
+
+| Option | Rule shows when… |
+|---|---|
+| **All collections** | always (no collection restriction) |
+| **Only selected** | **every** cart product is in a selected collection |
+| **Hide for selected** | **no** cart product is in a selected collection |
+
+### Can I set payment rules by collection?
+
+Yes, with the **Collections** section of any rule.
+
+### How do I turn off COD for a whole collection?
+
+In your **COD** rule, choose **Hide for selected** and select that collection. COD is hidden whenever a product from it is in the cart.
+
+### How do I show a rule only for certain collections?
+
+Choose **Only selected** and click **Select collections**.
+
+### How do I hide a rule for certain collections?
+
+Choose **Hide for selected** and click **Select collections**.
+
+### How do I add collections to a rule?
+
+Choose **Only selected** or **Hide for selected**, click **Select collections**, pick them and save. Their IDs appear in **Collection IDs**.
+
+### What happens if the cart has items from different collections?
+
+- **Only selected**: every product must be in one of your collections, unless **Match any product in cart** is ticked (then one is enough).
+- **Hide for selected**: one product from a selected collection hides the rule.
+
+### Why is my collection rule not working?
+
+With **Only selected**, check whether another cart product sits outside your collections. Tick **Match any product in cart** if one match should be enough. Collection membership is cached for up to about 10 minutes, so very recent collection changes may take a few minutes to apply.
+
+### What does hide for selected collections mean?
+
+The rule is hidden if any product in the cart belongs to one of the selected collections.
+
+### Do I have to select every product or can I just select the collection?
+
+Just select the collection. Every product in it is covered, including ones you add later.
+
+### Can I use product and collection rules together?
+
+Yes. A cart must pass **both**: the **Applies to** (products) check and the **Collections** check.

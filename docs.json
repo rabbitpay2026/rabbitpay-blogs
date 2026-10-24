@@ -35,7 +35,11 @@
           "help/rto/shipping",
           "help/rto/payment-methods",
           "help/rto/cart-value",
-          "help/rto/products"
+          "help/rto/products",
+          "help/rto/collections",
+          "help/rto/pincodes",
+          "help/rto/phone-numbers",
+          "help/rto/cod-availability"
         ]
       },
       {
