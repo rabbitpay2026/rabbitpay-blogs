@@ -1,0 +1,130 @@
+---
+title: "RTO Suite: payment rules and return-risk engine"
+sidebarTitle: "RTO Suite"
+description: "Decide what shoppers pay upfront, when COD is offered, and grey out COD for high-risk customers."
+icon: "shield-halved"
+keywords:
+  - "rto"
+  - "partial payment"
+  - "cod"
+  - "payment rules"
+  - "cod fee"
+  - "pincode"
+  - "zipcode"
+  - "risk"
+  - "cart range"
+---
+
+The **RTO Suite** is where you control how shoppers can pay. It has two parts:
+
+- **Payment rules**: the payment options shown at checkout (full prepaid, partial payment upfront, COD), and which carts see each one.
+- **Return-risk engine**: scores each checkout for return-to-origin (RTO) risk and can grey out COD for high-risk shoppers.
+
+## Payment rules
+
+Each rule is one payment option at checkout, for example "Pay 20% now, rest on delivery" or "Cash on Delivery". The list shows each rule's **Order**, **Rule name** and **Payment amount**.
+
+Rules are checked **in order, top to bottom**, so put your preferred default first. Use the up and down arrows to reorder them.
+
+### Add a rule
+
+<Steps>
+  <Step title="Open RTO Suite">
+    Go to **RTO Suite** and click **Add payment rule**.
+  </Step>
+  <Step title="Name the rule and set the amount">
+    The **Rule name** and amount are shown to shoppers at checkout. Pick an **Amount type**:
+
+    | Amount type | What the shopper pays upfront |
+    |---|---|
+    | **Percentage** | A share of the order, e.g. 20% now and the rest on delivery |
+    | **Fixed amount** | A fixed sum now, e.g. ₹199, and the rest on delivery |
+    | **Full payment** | 100% prepaid |
+    | **COD** | Nothing upfront. Pays on delivery, optionally with a COD fee. |
+  </Step>
+  <Step title="Choose when the rule applies">
+    Narrow the rule down with the options in the next section, such as cart range, products, collections, pincodes or phone numbers.
+  </Step>
+  <Step title="Save">
+    Make sure **Rule enabled** is on, then click **Create rule**.
+  </Step>
+</Steps>
+
+### Rule options
+
+<AccordionGroup>
+  <Accordion title="Cart range">
+    Show the rule only when the cart total is between **Min cart total** and **Max cart total**. Leave a side blank for no limit.
+  </Accordion>
+  <Accordion title="Description">
+    A **Custom description** shown under the payment option. Leave it blank to use the default wording. Each line shows on its own line.
+  </Accordion>
+  <Accordion title="Partial COD fee">
+    For partial-payment rules, turn on **Include COD fee on delivery** to add a fee to the amount paid on delivery. Choose how it's calculated:
+    - **Fixed amount** (₹)
+    - **Percentage of order value**, charged on the order total including tax and shipping
+    - **Whichever is higher**, e.g. ₹199 or 2% of the order value, whichever is more
+
+    If the fee is blank or 0, no COD fee is added.
+  </Accordion>
+  <Accordion title="Discount">
+    Reward shoppers who choose this option with a discount: a **Discount code**, a **Discount type** (fixed or percentage), and a **Discount value**. **Apply discount on** can be:
+    - **Total amount (once per order)**
+    - **Per product (× cart quantity)**: a ₹100 discount becomes ₹200 for 2 items, ₹300 for 3, and so on.
+
+    Under **Applicable discounts on COD**, choose whether **Manual discounts** (codes and gift coupons the shopper enters) and **Automatic discounts (Shopify)** still apply when the shopper picks COD. When off, COD is charged the full amount without that discount. Prepaid isn't affected.
+  </Accordion>
+  <Accordion title="Applies to (products)">
+    - **All products**: every item in the cart.
+    - **Only selected**: the cart must include one of the listed products.
+    - **All except selected**: hidden when the cart only contains the excluded products.
+  </Accordion>
+  <Accordion title="Collections">
+    - **All collections**: no collection restriction.
+    - Show only when every cart product is in a selected collection.
+    - **Hide for selected**: hidden when any cart product is in a selected collection.
+
+    Products added to a selected collection later are covered automatically.
+  </Accordion>
+  <Accordion title="Payment methods">
+    Choose which prepaid methods (such as **UPI** and **Cards**) show at checkout for this rule. All are on by default.
+  </Accordion>
+  <Accordion title="COD availability">
+    - **Show COD as disabled when blocked**: when COD is blocked for a product or pincode, show it greyed out with your message instead of hiding it. The default message is "Cash on Delivery isn't available for this item or in your area".
+    - **Max items for COD**: when the cart has more items than this (total quantity), COD is greyed out and only prepaid is available. Leave it blank for no limit.
+  </Accordion>
+  <Accordion title="Pincode (zipcode) restrictions">
+    - **Enable zipcode restrictions**: hide the rule for the pincodes you list.
+    - **Enable zipcode whitelisting**: show the rule only for the pincodes you list.
+
+    Separate pincodes with commas or new lines. Ranges like `400001-400010` work when both ends have the same number of digits. If both lists are on, a pincode must be on the whitelist **and** not on the blocked list. This needs address collection at checkout.
+  </Accordion>
+  <Accordion title="Phone number restrictions">
+    Hide the rule for listed phone numbers, or show it only for listed numbers. Numbers are matched on the shopper's **verified** phone number using the last 10 digits, so `+91 98765 43210` and `9876543210` count as the same number.
+  </Accordion>
+</AccordionGroup>
+
+### Edit, disable or delete a rule
+
+Click the pencil icon to edit a rule, or turn **Rule enabled** off to hide it without deleting it. Click the delete icon to remove a rule for good.
+
+## Return-risk engine
+
+The **Return-risk engine** scores every checkout for RTO risk, using the shopper's pincode and order history. It's **off by default**.
+
+When it's on, every checkout that reaches the address step is scored, and the verdict shows on the order and on the abandoned-cart lead.
+
+### Grey out COD for high-risk customers
+
+With the engine on, you can also turn on **Grey out COD for high-risk customers**. High-risk shoppers still see COD with a short explanation, and can pay online instead.
+
+<Warning>
+  This is live: it changes what shoppers see at checkout. Leave it off at first and watch the scores on your orders for a few days before turning it on.
+</Warning>
+
+## Suggested starting setup
+
+1. **Full payment** with a small discount, first in the list, to encourage prepaid.
+2. **Partial payment** (for example 10–20% upfront) for higher-value carts using **Cart range**.
+3. **COD** last, with **Max items for COD** and pincode blocks for areas with high returns.
+4. Turn on the **Return-risk engine** and watch it for a few days before greying out COD.

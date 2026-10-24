@@ -15,7 +15,8 @@
         "pages": [
           "help/getting-started",
           "help/checkout-settings",
-          "help/payments"
+          "help/payments",
+          "help/rto-suite"
         ]
       },
       {
