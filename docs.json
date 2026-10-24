@@ -23,7 +23,9 @@
       {
         "group": "RTO Suite guide",
         "icon": "shield-halved",
-        "pages": []
+        "pages": [
+          "help/rto/manage-rules"
+        ]
       },
       {
         "group": " ",
