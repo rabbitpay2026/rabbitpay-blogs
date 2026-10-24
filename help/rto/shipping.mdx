@@ -1,0 +1,64 @@
+---
+title: "Shipping charges on partial payment"
+sidebarTitle: "Shipping charges"
+description: "Collect the shipping charge upfront with the advance, and how it changes the advance amount."
+icon: "truck"
+keywords:
+  - "shipping"
+  - "collect shipping upfront"
+  - "shipping charge"
+  - "advance and shipping"
+---
+
+Partial payment rules (Percentage or Fixed amount) have a **Shipping charge** section with one switch: **Collect shipping charge upfront**.
+
+<Frame caption="Shipping charge section of a partial payment rule">
+  <img src="/images/rto/shipping-upfront.png" alt="Collect shipping charge upfront switch highlighted" />
+</Frame>
+
+### How do I collect shipping charge in advance?
+
+Open your partial payment rule, switch on **Collect shipping charge upfront** and save.
+
+### What does collect shipping charge upfront do?
+
+The shipping rate chosen at checkout is added to the **Pay now** amount. The advance % is then worked out on the rest of the order, without shipping.
+
+Example: ₹1,000 of products + ₹100 shipping, 20% rule:
+
+| | Switch off | Switch on |
+|---|---|---|
+| Pay now | 20% × ₹1,100 = **₹220** | ₹100 shipping + 20% × ₹1,000 = **₹300** |
+| On delivery | ₹880 | ₹800 |
+
+### How do I stop collecting shipping online?
+
+Switch **Collect shipping charge upfront** off and save.
+
+### Why is shipping not getting added to the pay now amount?
+
+The switch is off, or the rule isn't a Percentage or Fixed amount rule (the option only exists on those). Also check that you saved, and test in a fresh checkout tab.
+
+### Can I make customers pay shipping online even for COD?
+
+Not with a COD rule: it collects everything on delivery. Use a partial payment rule with **Collect shipping charge upfront**. To make shoppers pay at least the shipping online, use a small advance with the switch on.
+
+### What happens to shipping when customer pays only part online?
+
+With the switch **off**, shipping is part of the order total and the advance % applies to it. With it **on**, shipping is paid in full online and the advance % applies to the rest.
+
+### Why do customers pay a different advance after choosing shipping?
+
+With the switch off, the advance is a % of the total including shipping, so a costlier shipping option raises it. With the switch on, the shipping amount itself is added to pay now.
+
+### Does the advance apply to shipping also?
+
+Switch off: yes, the advance % includes shipping (and tax). Switch on: no, shipping is collected in full separately and the % applies to the rest.
+
+### How do I show shipping in the payment description?
+
+In **Custom description (optional)**, insert `{shipping}`. For example: `Pay {pay_now} now (incl. {shipping} shipping), {pay_later} on delivery`.
+
+### Why are my customers confused about shipping and advance?
+
+Make the option text explicit. Use the custom description with `{pay_now}`, `{shipping}` and `{pay_later}` so shoppers see exactly what they pay now and later.

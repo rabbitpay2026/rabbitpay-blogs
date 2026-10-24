@@ -1,0 +1,72 @@
+---
+title: "Payment methods (UPI, Cards, Wallets, NetBanking, EMI)"
+sidebarTitle: "Payment methods"
+description: "Choose which online payment methods shoppers see, and in what order."
+icon: "wallet"
+keywords:
+  - "payment methods"
+  - "upi"
+  - "cards"
+  - "emi"
+  - "wallets"
+  - "netbanking"
+  - "hide payment method"
+---
+
+Which online methods shoppers can use is set in your **Full payment** rule's **Payment methods** section. The order they appear in is set in **Customization**.
+
+<Frame caption="Payment methods in a Full payment rule">
+  <img src="/images/rto/payment-methods.png" alt="UPI, Cards, Wallets, NetBanking and EMI switches; EMI off" />
+</Frame>
+
+### How do I change the online payment options my customers see?
+
+Open your **Full payment** rule → **Payment methods**, turn methods on or off, and save.
+
+### How do I hide a payment method?
+
+Switch it off in the Full payment rule's **Payment methods** and save.
+
+### How do I show only UPI?
+
+In **Payment methods**, keep **UPI** on and switch off **Cards**, **Wallets**, **NetBanking** and **EMI**.
+
+### How do I turn off cards?
+
+Switch off **Cards** in the Full payment rule.
+
+### How do I turn off EMI?
+
+EMI is **off by default**. If you turned it on, switch **EMI** off again.
+
+### How do I turn on wallets?
+
+Switch **Wallets** on (it's on by default).
+
+### Can I remove netbanking?
+
+Yes. Switch **NetBanking** off.
+
+### Are all payment methods on by default?
+
+UPI, Cards, Wallets and NetBanking are on by default. EMI is off.
+
+### Can I pick different payment methods for different rules?
+
+No. Only the **first matching Full payment rule** decides the methods. You can create several Full payment rules with different conditions (say, different cart ranges); whichever matches first controls the methods for that cart.
+
+### Why is a payment method not showing for my customers?
+
+It may be switched off in the Full payment rule, your gateway may not support it, or the gateway isn't **Enabled** in **Settings → Payments**. Check the order too: **Customization → Payments → Payment method order**.
+
+<Frame caption="Customization → Payments: order of options and a live preview">
+  <img src="/images/rto/customization-payments.png" alt="Payments tab and Payment method order highlighted, with the live checkout preview" />
+</Frame>
+
+### Where do I choose which prepaid options show?
+
+In **RTO Suite**, in your Full payment rule → **Payment methods**. The order is set in **Customization → Payments → Payment method order**.
+
+### Can I allow only some payment methods for small orders?
+
+Yes. Make two Full payment rules with different **Cart range** values and different **Payment methods**. Put the small-order rule first; it applies to carts in its range.

@@ -1,0 +1,64 @@
+---
+title: "Cart value limits"
+sidebarTitle: "Cart value limits"
+description: "Show a rule only for carts above or below a certain value."
+icon: "scale-balanced"
+keywords:
+  - "cart range"
+  - "min cart total"
+  - "max cart total"
+  - "order value"
+  - "cart limit"
+---
+
+Every rule has a **Cart range**: **Min cart total** and **Max cart total**. The rule shows only when the cart value is inside that range.
+
+<Frame caption="Cart range on a rule">
+  <img src="/images/rto/cart-range.png" alt="Min cart total and Max cart total fields highlighted" />
+</Frame>
+
+<Note>The cart value checked is the **cart total before discounts, without shipping or tax**. Both limits are inclusive: a ₹500 minimum includes a ₹500 cart.</Note>
+
+### Can I show a rule only for bigger orders?
+
+Yes. Set **Min cart total**, e.g. 2000.
+
+### Can I show a rule only for smaller orders?
+
+Yes. Set **Max cart total**, e.g. 999.
+
+### How do I set a minimum cart value for a rule?
+
+Open the rule, enter **Min cart total**, save.
+
+### How do I set a maximum cart value for a rule?
+
+Open the rule, enter **Max cart total**, save.
+
+### What happens if I leave the cart limits empty?
+
+Blank (or 0) means no limit on that side.
+
+### Why is my rule not showing for some carts?
+
+The cart is outside the range. Remember it's checked **before discounts, without shipping and tax**, so a cart that looks like ₹520 at checkout might be ₹500 or less on that measure.
+
+### Can I use cart value to decide COD or prepaid?
+
+Yes. For example, give your COD rule **Max cart total** 3000 so bigger orders only see prepaid and partial options.
+
+### How do I remove the cart limit from a rule?
+
+Clear both fields (or set them to 0) and save.
+
+### Do cart limits include discount and shipping?
+
+No. They use the cart total **before** discounts, without shipping or tax.
+
+### How do I set different rules for different cart sizes?
+
+Create a rule per band with non-overlapping ranges. For example:
+
+- "Pay ₹99 now": max ₹999
+- "Pay 10% now": min ₹1,000, max ₹4,999
+- "Pay 20% now": min ₹5,000

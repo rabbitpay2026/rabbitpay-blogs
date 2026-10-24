@@ -1,0 +1,77 @@
+---
+title: "Product restrictions"
+sidebarTitle: "Product restrictions"
+description: "Show or hide a payment rule for specific products."
+icon: "box"
+keywords:
+  - "products"
+  - "only selected"
+  - "all except selected"
+  - "disable cod for products"
+  - "prepaid only products"
+---
+
+The **Applies to** section of a rule controls which products it's shown for.
+
+<Frame caption="Applies to: pick a mode, then Select products">
+  <img src="/images/rto/applies-to.png" alt="Only selected option and Select products button highlighted" />
+</Frame>
+
+| Option | Rule shows when… |
+|---|---|
+| **All products** | always (no product restriction) |
+| **Only selected** | **every** product in the cart is in your list |
+| **All except selected** | **none** of the cart's products are in your list (hidden if any listed product is in the cart) |
+
+### Can I disable COD for certain products?
+
+Yes. In your **COD** rule, choose **All except selected** and select those products. If any of them is in the cart, COD is hidden (or greyed out, if **Show COD as disabled when blocked** is on).
+
+### How do I show a rule only for some products?
+
+Choose **Only selected** and click **Select products**.
+
+### How do I hide a rule for some products?
+
+Choose **All except selected** and click **Select products**.
+
+### What does only selected products mean?
+
+The rule shows only when **every** product in the cart is one you selected. To show it when **any one** product matches, tick **Match any product in cart** (see below).
+
+### What does all except selected mean?
+
+The rule is hidden when **any** cart product is one you selected.
+
+### What happens if the cart has many different products?
+
+- **Only selected**: all of them must be in your list, unless **Match any product in cart** is ticked.
+- **All except selected**: one listed product is enough to hide the rule.
+
+### Does every product in the cart have to match the rule?
+
+With **Only selected**, yes by default. Tick **Show this rule if any product in the cart matches** to need just one.
+
+<Frame caption="Match any product in cart">
+  <img src="/images/rto/match-any.png" alt="Show this rule if any product in the cart matches checkbox highlighted" />
+</Frame>
+
+### How do I pick products for a rule?
+
+After choosing **Only selected** or **All except selected**, click **Select products** and pick from your Shopify catalogue. The chosen IDs appear in **Product IDs**.
+
+### Why is my rule not showing for the products I selected?
+
+With **Only selected**, the cart probably also has a product that isn't in your list. Tick **Match any product in cart**, or add the other products. Also check the rule's other conditions.
+
+### How do I make a rule apply to all products again?
+
+Choose **All products** and save.
+
+### Can I ask for advance payment only on certain products?
+
+Yes. Create a partial payment rule with **Only selected** + those products, and hide your COD rule for the same products with **All except selected**.
+
+### Can I make some products prepaid only?
+
+Yes. In your COD rule, and in any partial rules, choose **All except selected** with those products. Only your Full payment option remains for carts containing them.
