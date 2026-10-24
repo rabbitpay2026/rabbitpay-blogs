@@ -1,0 +1,106 @@
+---
+title: "Wallet & billing"
+sidebarTitle: "Wallet & billing"
+description: "How RabbitPay charges you, how to recharge your wallet, and what happens when your balance runs low."
+icon: "wallet"
+keywords:
+  - "wallet"
+  - "recharge"
+  - "top up"
+  - "billing"
+  - "transaction fee"
+  - "cod fee"
+  - "gst invoice"
+  - "low balance"
+  - "refund"
+  - "postpaid"
+---
+
+## What you're charged for
+
+Your rates are agreed with you during onboarding. You can see every charge in **Wallet → Billing charges** and in **Billing & Statements**.
+
+| Charge | When it applies |
+|---|---|
+| **Transaction fee** | A percentage of the order amount on every prepaid order **and** every partial-payment order. For partial payments it's charged on the full order amount, not just the part paid upfront. |
+| **COD transaction fee** | A percentage of the order amount on every COD order |
+| **Pre-order OTP** (SMS / WhatsApp) | Per OTP message sent at checkout |
+| **SMS**, **WhatsApp utility**, **WhatsApp marketing**, **IVR** | Per message or call sent to your customers |
+| **Abandoned cart** (SMS / WhatsApp) | Per recovery message sent |
+
+Each order is charged either the transaction fee or the COD fee, never both. If you joined through a RabbitPay partner, the partner's agreed fee is added on top of RabbitPay's.
+
+<Note>
+  If you turn on **Send OTP on SMS and WhatsApp**, each OTP is sent twice, and each message is billed at its own channel's rate.
+</Note>
+
+### Fees returned on cancellations and refunds
+
+If an order is cancelled or its payment is refunded, the transaction fee for that order is returned to your wallet. You can see these under **Wallet → Refund credits**.
+
+## Billing modes
+
+Your store uses one of three billing modes, set up with you during onboarding:
+
+| Mode | How you pay |
+|---|---|
+| **Wallet** (prepaid) | You add balance in advance. Charges are deducted from it automatically every hour. |
+| **Shopify usage charges** | Charges are added to your Shopify bill as app usage charges. |
+| **Postpaid via COD King** | For stores that also use COD King: usage is billed daily to your COD King Shopify bill. |
+
+## Recharge your wallet
+
+<Steps>
+  <Step title="Open Wallet">
+    Go to **Wallet** in the dashboard. **Current Balance** shows what's left.
+  </Step>
+  <Step title="Enter an amount">
+    Under **Add to balance**, enter the amount in ₹. The minimum recharge is **₹500**.
+  </Step>
+  <Step title="Check the total">
+    GST is added on top. You'll see the **Recharge (added to balance)**, the **GST**, and the **Total payable**. Only the recharge amount is added to your balance.
+  </Step>
+  <Step title="Pay">
+    Pay securely through Razorpay. Your balance updates as soon as the payment clears. If you see "Payment received — balance will update shortly", it will appear within a few minutes.
+  </Step>
+</Steps>
+
+Every recharge has a **GST invoice**, which you can download from the **Top-ups** list.
+
+## When your balance runs low
+
+- **Overdraft buffer.** Your wallet can go a little below zero (shown as **Overdraft buffer**) so a short shortfall doesn't interrupt anything.
+- **Floor.** If your balance drops below the **Floor**, you get a low-balance alert, and messages such as notifications **pause until you recharge**.
+- **Charges still post.** Usage that has already happened is always recorded, so your balance can go negative. It's settled from your next recharge.
+
+<Warning>
+  Recharge before you reach the floor to avoid paused messages during busy sales.
+</Warning>
+
+## Postpaid stores
+
+If your store moved from wallet to postpaid billing, **Wallet** shows the balance you brought over and how it's being used:
+
+- Any credit pays your daily bills first.
+- Any amount owed is added to your next COD King Shopify bill.
+- This balance can't be topped up in postpaid mode.
+
+## Statements and exports
+
+- **Wallet → Billing charges**: each charge, with filters for date range (Today, 7d, 30d, This month) and category. Open a charge to see the records behind it.
+- **Billing & Statements**: your charges for a chosen **Statement month**.
+- Lists can be exported for your accounts team.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I paid but my balance didn't go up">
+    Wait a few minutes and refresh the page. Payments are confirmed by Razorpay in the background. If it still hasn't updated after 15 minutes, contact support with your Razorpay payment ID.
+  </Accordion>
+  <Accordion title="Why was I charged a fee on a partial-payment order?">
+    Partial-payment orders are billed at the transaction fee on the full order amount, the same as prepaid orders.
+  </Accordion>
+  <Accordion title="An order was cancelled. Do I get the fee back?">
+    Yes. The fee is returned to your wallet and shows under **Refund credits**.
+  </Accordion>
+</AccordionGroup>

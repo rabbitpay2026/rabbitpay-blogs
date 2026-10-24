@@ -1,0 +1,74 @@
+---
+title: "Connect your payment gateway"
+sidebarTitle: "Payments"
+description: "Connect Razorpay, PayU or Cashfree so RabbitPay checkout can collect prepaid and partial payments."
+icon: "credit-card"
+keywords:
+  - "razorpay"
+  - "payu"
+  - "cashfree"
+  - "payment gateway"
+  - "key id"
+  - "salt"
+  - "webhook"
+  - "upi"
+---
+
+RabbitPay collects prepaid and partial payments through **your own** payment gateway account, so the money settles straight to you. Supported gateways:
+
+| Gateway | What it offers at checkout | Keys you need |
+|---|---|---|
+| **Razorpay** | UPI, cards, netbanking and more | **Key ID** and **Key secret** |
+| **PayU** | Hosted and Bolt checkout for UPI, cards, netbanking, EMI and wallets | **Merchant Key** and **Salt** |
+| **Cashfree Payments** | UPI, cards, netbanking and wallets | **App ID** and **Secret Key** |
+
+## Connect a gateway
+
+<Steps>
+  <Step title="Get your keys">
+    Sign in to your gateway's dashboard and copy the keys listed above. Use **live** keys for real orders.
+  </Step>
+  <Step title="Open Settings → Payments">
+    In the RabbitPay dashboard, go to **Settings → Payments** and click **Configure** on your gateway.
+  </Step>
+  <Step title="Enter the keys">
+    Paste your keys. For **PayU** and **Cashfree**, also choose the **Environment**:
+    - **Test** (`test.payu.in` / `sandbox.cashfree.com`) for test keys
+    - **Production** (`secure.payu.in` / `api.cashfree.com`) for live keys
+
+    Test keys only work with the Test environment. If they don't match, the gateway rejects the payment.
+  </Step>
+  <Step title="Set up the webhook">
+    In your gateway's dashboard, add the RabbitPay webhook so we're told when a payment succeeds, even if the shopper closes the page. Then tick **I have successfully configured the webhook**. Our team will share the webhook URL with you during onboarding.
+  </Step>
+  <Step title="Save and enable">
+    Save. The gateway card now shows a switch. Turn it to **Enabled** to start taking payments through it.
+  </Step>
+</Steps>
+
+## Only one gateway is active at a time
+
+Checkout can only send payments to one gateway. When you enable a gateway, any other enabled gateway is switched off automatically, and the message tells you which one. Turning a gateway off does **not** switch another one on. If you turn your only gateway off, prepaid payments stop until you enable one again.
+
+## Update or remove a gateway
+
+- **Change keys:** open the gateway's settings again and enter the new keys. You don't need to tick the webhook box again if it's already set up.
+- **Disconnect:** click **Disconnect**. RabbitPay warns you first, because this removes the saved keys and related payment settings from your store. If you also linked the gateway in Shopify, unlink it there too.
+
+## Show or hide payment methods
+
+To choose which methods (for example UPI or cards) appear on the payment step, go to **Customization**. To offer different methods for different carts, use payment rules in the [RTO Suite](/help/rto-suite).
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Shoppers can't pay online">
+    Check that your gateway shows **Enabled** in **Settings → Payments**. For PayU or Cashfree, check that the environment matches your keys (live keys need **Production**).
+  </Accordion>
+  <Accordion title="Payment succeeded but the order is missing">
+    This usually means the webhook isn't set up. Add it in your gateway's dashboard, then contact support with the payment ID so we can check the order.
+  </Accordion>
+  <Accordion title="I enabled a second gateway and the first one stopped">
+    That's expected: only one gateway can be active. Enable the one you want to use.
+  </Accordion>
+</AccordionGroup>
