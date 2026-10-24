@@ -1,0 +1,72 @@
+---
+title: "Cash on Delivery (COD) rule"
+sidebarTitle: "COD rule"
+description: "Turn COD on or off, charge a COD fee and limit who sees COD."
+icon: "money-bill"
+keywords:
+  - "cod"
+  - "cash on delivery"
+  - "cod rule"
+  - "turn off cod"
+  - "cod fee"
+---
+
+COD at checkout comes from a payment rule whose **Amount type** is **COD**.
+
+<Frame caption="A COD rule: the second field is the COD fee">
+  <img src="/images/rto/amount-cod.png" alt="COD selected, with the COD fee type and amount highlighted" />
+</Frame>
+
+### How do I turn on COD for my store?
+
+Create a rule with **Amount type** = **COD** (**RTO Suite → Add payment rule**), name it e.g. "Cash on Delivery", and keep **Rule enabled** on.
+
+### How do I turn off COD?
+
+Open your COD rule, switch **Rule enabled** off and save. Shoppers then see only online and partial options.
+
+### Why is COD not showing to my customers?
+
+Check that:
+
+- the COD rule is enabled;
+- the cart meets its conditions (cart range, products, collections, pincode and phone lists);
+- the cart isn't over **Max items for COD**;
+- the **Return-risk engine**'s "Grey out COD for high-risk customers" isn't greying it out for that shopper;
+- you're testing in a fresh checkout tab.
+
+### How do I add a COD rule?
+
+**RTO Suite → Add payment rule** → **Amount type: COD** → set an optional COD fee → **Create rule**.
+
+### Can I charge a fee for COD?
+
+Yes. In a COD rule the second field is **COD fee**. Choose **Fixed amount**, **Percentage of order value** or **Whichever is higher**, then enter the amount. See [COD fee](/help/rto/cod-fee).
+
+### How do I make COD free?
+
+Leave the COD fee blank or set it to 0 ("Blank or 0 = no COD fee").
+
+### How do I change the COD fee?
+
+Edit the COD rule, change the fee and click **Save changes**.
+
+### Where do I set the COD fee?
+
+In the COD rule, next to **Amount type**. For partial payment rules it's the **Partial COD fee** section.
+
+### Can I stop COD for some customers only?
+
+Yes. In the COD rule, use **Phone number restrictions** to hide it for listed numbers, or **Zipcode restrictions** for areas. The Return-risk engine can also grey out COD for high-risk shoppers.
+
+### Why is COD showing on orders where I don't want it?
+
+Your COD rule has no condition that excludes those orders. Add a **Max cart total**, **Applies to → All except selected** (products), **Collections → Hide for selected**, pincode or phone block lists, or **Max items for COD**.
+
+### Can I keep COD but ask for some payment online first?
+
+Yes. That's a partial payment rule (Percentage or Fixed amount), which shows next to COD. To make an advance mandatory in some cases, hide the COD rule there and keep the partial rule. See [Partial payment](/help/rto/partial-payment).
+
+### How do I show COD only for certain orders?
+
+Add conditions to the COD rule: cart range, products, collections, **Enable zipcode whitelisting**, or **Enable phone number whitelisting**.

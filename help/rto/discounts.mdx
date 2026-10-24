@@ -1,0 +1,105 @@
+---
+title: "Discounts on payment rules"
+sidebarTitle: "Discounts"
+description: "Reward online payment with a discount, and control which discounts apply on COD."
+icon: "tag"
+keywords:
+  - "discount"
+  - "prepaid discount"
+  - "coupon"
+  - "cod discount"
+  - "per product discount"
+  - "automatic discount"
+---
+
+Each payment rule can carry its own discount, for example 5% off for paying online.
+
+<Frame caption="Discount (optional) section of a rule">
+  <img src="/images/rto/discount.png" alt="Discount code, Discount type and Apply discount on highlighted" />
+</Frame>
+
+### How do I add a discount to a payment rule?
+
+Open the rule and fill in **Discount (optional)**: **Discount code**, **Discount type** (Fixed amount or Percentage) and **Discount value**. Save.
+
+<Note>The discount applies only when **both** a Discount code and a Discount value above 0 are filled in.</Note>
+
+### How do I give a discount only for online payment?
+
+Put the discount on your **Full payment** rule (and on partial rules if you like). Shoppers get it only when they choose that option.
+
+### Can I give a percentage discount?
+
+Yes. Set **Discount type** to **Percentage**. On a Full payment rule it's taken off the items total (after cart discounts, not on shipping). On a partial rule it's taken off the full order total.
+
+### Can I give a fixed discount?
+
+Yes. Set **Discount type** to **Fixed amount** and enter the rupees.
+
+### What does apply discount once per order mean?
+
+**Total amount (once per order)** gives the discount once, whatever the number of items.
+
+### What does apply discount per product mean?
+
+**Per product (× cart quantity)** multiplies a fixed discount by the number of items: ₹100 becomes ₹200 for 2 items, ₹300 for 3, and so on. It only works with fixed-amount discounts.
+
+### How do I make the discount apply to every item?
+
+Choose **Per product (× cart quantity)** under **Apply discount on**.
+
+### Why is my discount not showing at checkout?
+
+Make sure **both** Discount code and Discount value are filled in, that the rule is enabled and matches the cart, and that you're in a fresh checkout tab.
+
+### Why is my discount not applying?
+
+Same checks. Also note: the discount applies only when the shopper picks **that** payment option. On a Full payment rule, if the cart is outside the rule's cart range, prepaid stays available but without the discount.
+
+### Do I need to give a discount code?
+
+Yes. The code is required for the discount to apply. Shoppers don't type it; it appears on the order as a label ("Prepaid discount" or "Part payment discount").
+
+### How do I change the discount code?
+
+Edit the rule, change **Discount code**, save.
+
+### How do I remove the discount from a rule?
+
+Clear **Discount code** and **Discount value**, then save.
+
+### Can customers use another coupon along with this discount?
+
+Yes. A shopper's own coupon code or Shopify automatic discount still applies, and is combined with the rule's discount on the order.
+
+### How do my Shopify discounts work with these rules?
+
+Shopify discount codes and automatic discounts keep working on prepaid and partial orders. For COD you can choose whether they apply; see the next questions.
+
+<Frame caption="COD rule: choose which discounts still apply on COD">
+  <img src="/images/rto/cod-discounts.png" alt="Manual discounts and Automatic discounts (Shopify) switches highlighted" />
+</Frame>
+
+### Do coupon codes work on COD orders?
+
+By default, yes. In your COD rule, **Applicable discounts on COD → Manual discounts** controls this.
+
+### Do gift coupons work on COD orders?
+
+They follow the same **Manual discounts** switch. Turn it off and gift coupons are blocked on COD too.
+
+### Do automatic discounts work on COD orders?
+
+By default, yes. The **Automatic discounts (Shopify)** switch in your COD rule controls this.
+
+### How do I stop discounts from applying on COD?
+
+In the COD rule, switch off **Manual discounts** and/or **Automatic discounts (Shopify)**. COD is then charged at full price; prepaid isn't affected.
+
+### Why are COD customers getting the full price without discount?
+
+One of those switches is off in your COD rule. Turn it back on if you want discounts on COD.
+
+### How do I show the discount in the payment description?
+
+In a partial rule's **Custom description**, `{discount}` inserts the cart's discount amount. You can also put the offer in the rule name, e.g. "Pay online & save 5%".
