@@ -14,7 +14,8 @@
         "icon": "life-ring",
         "pages": [
           "help/getting-started",
-          "help/checkout-settings"
+          "help/checkout-settings",
+          "help/payments"
         ]
       },
       {
