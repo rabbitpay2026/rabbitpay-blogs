@@ -39,7 +39,9 @@
           "help/rto/collections",
           "help/rto/pincodes",
           "help/rto/phone-numbers",
-          "help/rto/cod-availability"
+          "help/rto/cod-availability",
+          "help/rto/risk-engine",
+          "help/rto/setup"
         ]
       },
       {
