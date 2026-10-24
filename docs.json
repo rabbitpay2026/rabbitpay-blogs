@@ -24,7 +24,10 @@
         "group": "RTO Suite guide",
         "icon": "shield-halved",
         "pages": [
-          "help/rto/manage-rules"
+          "help/rto/manage-rules",
+          "help/rto/rule-order",
+          "help/rto/amount-types",
+          "help/rto/full-payment"
         ]
       },
       {

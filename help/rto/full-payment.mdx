@@ -1,0 +1,65 @@
+---
+title: "Full payment (prepaid)"
+sidebarTitle: "Full payment"
+description: "Set up the prepaid option, add a prepaid discount and choose which online methods show."
+icon: "credit-card"
+keywords:
+  - "full payment"
+  - "prepaid"
+  - "prepaid discount"
+  - "pay online"
+  - "100%"
+---
+
+A **Full payment** rule is your prepaid option: the shopper pays 100% online.
+
+<Frame caption="Pick Full payment as the Amount type">
+  <img src="/images/rto/amount-full.png" alt="Full payment selected; amount fixed at 100%" />
+</Frame>
+
+### How do I set up a full payment option?
+
+1. **RTO Suite → Add payment rule**.
+2. Name it (e.g. "Pay online") and set **Amount type** to **Full payment**. The amount is fixed at 100%.
+3. Optionally add a discount and choose **Payment methods**.
+4. Click **Create rule**.
+
+### How do I make customers pay everything online?
+
+Keep only a **Full payment** rule enabled: switch off or delete your partial and COD rules. Or keep COD but limit it with pincode, phone or max-item rules.
+
+### Can I give a discount only when customers pay in full?
+
+Yes. In the Full payment rule, fill in **Discount code**, **Discount type** and **Discount value**. The discount applies only to shoppers who choose this option. See [Discounts](/help/rto/discounts).
+
+### How do I make full payment the first option?
+
+Move the rule to the top in **RTO Suite**, or set the order in **Customization → Payments → Payment method order**. You can also make it the **Recommended payment method** there.
+
+### How do I turn off the full payment option?
+
+Open the rule, switch **Rule enabled** off and save.
+
+### Why are my customers not choosing full payment?
+
+Give them a reason: a small prepaid discount usually helps. Show it in the rule name (e.g. "Pay online & save 5%") and place the option first.
+
+### Can I make full payment the only option for some orders?
+
+Yes. Use conditions on your **other** rules so they don't show for those orders. For example, give the COD rule a **Max cart total**, a pincode block list or **Max items for COD**. When those rules are filtered out, full payment is what's left.
+
+### How do I show full payment only for certain carts?
+
+Add conditions to the Full payment rule: **Cart range**, **Applies to** (products), **Collections**, pincodes or phone numbers.
+
+### Can I choose which online payment methods show for full payment?
+
+Yes, in the rule's **Payment methods** section: UPI, Cards, Wallets, NetBanking and EMI. All are on by default except EMI.
+
+<Frame caption="Payment methods (Full payment rules only)">
+  <img src="/images/rto/payment-methods.png" alt="UPI, Cards, Wallets, NetBanking and EMI switches" />
+</Frame>
+
+### Why is full payment not showing at checkout?
+
+Check that the rule is enabled, the cart meets its conditions, your payment gateway is connected and **Enabled** in **Settings → Payments**, and that you're testing in a fresh checkout tab.

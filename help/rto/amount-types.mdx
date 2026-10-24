@@ -1,0 +1,70 @@
+---
+title: "Types of payment rules (amount types)"
+sidebarTitle: "Amount types"
+description: "Percentage, Fixed amount, Full payment and COD: what each one charges the shopper."
+icon: "shapes"
+keywords:
+  - "amount type"
+  - "percentage"
+  - "fixed amount"
+  - "full payment"
+  - "cod rule"
+  - "rule types"
+---
+
+Every rule has an **Amount type**. It decides how much the shopper pays online at checkout.
+
+| Amount type | Shopper pays online now | The rest |
+|---|---|---|
+| **Percentage** | That % of the order, e.g. 20% | Paid on delivery |
+| **Fixed amount** | A fixed sum, e.g. ₹199 (never more than the order total) | Paid on delivery |
+| **Full payment** | 100% of the order | Nothing on delivery |
+| **COD** | Nothing | Whole order on delivery, plus any COD fee |
+
+<Frame caption="Percentage rule: the Amount is the share paid online">
+  <img src="/images/rto/amount-percentage.png" alt="Amount type and Amount fields highlighted for a Percentage rule" />
+</Frame>
+
+### What types of payment rules can I make?
+
+Four: **Percentage**, **Fixed amount**, **Full payment** and **COD**. Pick one under **Amount type** when you add or edit a rule.
+
+### What is the difference between percentage and fixed amount?
+
+A **Percentage** rule takes a share of the order online (10% of a ₹2,000 order is ₹200). A **Fixed amount** rule takes the same sum on every order (e.g. ₹199), capped at the order total.
+
+### When should I use a percentage rule?
+
+When your order values vary a lot. The advance grows with the order, so expensive orders carry a bigger commitment.
+
+### When should I use a fixed amount rule?
+
+When you want a simple, predictable advance ("Pay ₹99 now") or your prices are fairly similar.
+
+### What is a full payment rule?
+
+The shopper pays 100% online. It's your prepaid option, and it's where you choose which online methods show (UPI, cards, wallets, netbanking, EMI) and any prepaid discount. See [Full payment](/help/rto/full-payment).
+
+<Frame caption="Full payment is always 100%">
+  <img src="/images/rto/amount-full.png" alt="Full payment selected with the note Fixed at 100%" />
+</Frame>
+
+### What is a COD rule?
+
+The shopper pays nothing online and pays the whole order on delivery. A COD rule can add a **COD fee** and control when COD is shown or greyed out. See [Cash on Delivery rule](/help/rto/cod-rule).
+
+### Can I have all four types running together?
+
+Yes. That's the usual setup: Full payment, one or more partial rules (Percentage or Fixed amount) and COD all show as options at checkout.
+
+### How do I change a rule from one type to another?
+
+Open the rule, pick a different **Amount type**, fill in the fields that appear, and click **Save changes**. Some sections change with the type. For example, **Payment methods** appears only for Full payment, and **COD availability** only for COD.
+
+### Which rule type is best to reduce returns?
+
+Asking for some money upfront (**Percentage** or **Fixed amount**) gives shoppers a stake in accepting delivery. Pair it with a **Full payment** discount, and use COD limits such as pincode blocks and max items for risky orders.
+
+### How do I ask customers to pay only a small part online?
+
+Create a **Percentage** rule (e.g. 10) or a **Fixed amount** rule (e.g. 99). The rest is collected on delivery. See [Partial payment](/help/rto/partial-payment).

@@ -1,0 +1,67 @@
+---
+title: "Rule order and priority"
+sidebarTitle: "Rule order & priority"
+description: "How the order of payment rules decides what shoppers see first."
+icon: "arrow-down-1-9"
+keywords:
+  - "rule order"
+  - "priority"
+  - "default rule"
+  - "reorder"
+  - "which rule shows first"
+---
+
+Rules are listed top to bottom in **RTO Suite → Payment rules**, and checkout reads them in that order.
+
+<Frame caption="Use the arrows to move a rule up or down">
+  <img src="/images/rto/rto-row-actions.png" alt="Reorder arrows highlighted on the first rule row" />
+</Frame>
+
+### What does rule order mean?
+
+It's the position of each rule in your list. Checkout goes through your rules from the top, and the order of the payment options shoppers see follows it.
+
+### How does the order of rules work?
+
+- **Partial payment rules** (Percentage or Fixed amount): every enabled rule that matches the cart is shown as its own option, in your order.
+- **Full payment rules**: only the **first** matching one is used. It decides the prepaid options (UPI, cards and so on) and any prepaid discount.
+- **COD rules**: only the **first** matching one is used.
+
+### Which rule shows first at checkout?
+
+By default, options follow your rule order. Two settings can change that:
+
+- **Customization → Payments → Payment method order**: if you set a custom order there, it wins.
+- If the UPI QR option is on and you haven't set a custom order, UPI is shown at the top.
+
+### What happens if two rules match the same order?
+
+Two matching **partial** rules both show, as two options. Two matching **Full payment** rules, or two matching **COD** rules, don't both show: only the higher one in the list is used.
+
+### How do I change the order of my rules?
+
+Click the **up** or **down** arrow on a rule's row. The new order saves straight away and you'll see "Rule order updated".
+
+### How do I make one rule my default?
+
+Move it to the top of the list. The option shoppers find already selected is your **recommended method** (set in **Customization → Payments**) if you've chosen one; otherwise it's the first option that isn't a partial payment.
+
+### Why is the wrong rule showing first?
+
+Check **Customization → Payments → Payment method order**. A custom order there overrides your rule order. Also check that the rule you expect isn't switched off or excluded by its conditions.
+
+### Does the top rule always win?
+
+Only among rules of the same kind: the top **Full payment** rule and the top **COD** rule are the ones used. Partial payment rules don't compete; every matching one is shown.
+
+### I moved a rule up, why is nothing changing?
+
+Either a custom **Payment method order** in Customization is overriding it, or you're looking at a checkout tab that was open before the change. Open the store in a new tab or incognito window.
+
+### How should I arrange my rules?
+
+A good starting order:
+
+1. **Full payment** (with a small discount to encourage prepaid)
+2. **Partial payment** rules, most important first
+3. **COD** last
