@@ -60,8 +60,8 @@ No. They use the cart total **before** discounts, without shipping or tax.
 Create a rule per band with non-overlapping ranges. For example:
 
 - "Pay ₹99 now": max ₹999
-- "Pay 10% now": min ₹1,000, max ₹4,999
-- "Pay 20% now": min ₹5,000
+- "Pay 10% now": min ₹999.01, max ₹4,999
+- "Pay 20% now": min ₹4,999.01
 
 ### My two COD rules both cover ₹799. Which fee will the customer see?
 
@@ -76,13 +76,14 @@ Both limits are inclusive, so ₹500 is inside "max ₹500" **and** "min ₹500"
 
 ### How should I set the min and max so my slabs don't overlap?
 
-Use the **same number** where one slab ends and the next begins, e.g. slab 1 **Max cart total** 799 and slab 2 **Min cart total** 799. Then put the slab you want at exactly ₹799 higher in the list.
+Start the next slab **one paisa** after the previous one ends: slab 1 **Max cart total** 799, slab 2 **Min cart total** 799.01. The fields accept decimals.
 
-Don't use 799 and 800: a cart of ₹799.50 (prices with paise) would fall between them and match neither.
+- Don't use 799 and 800: a cart of ₹799.50 (prices with paise) would fall between them and match neither.
+- Using 799 for both also works for COD and Full payment rules (the higher rule wins at exactly ₹799), but for partial rules **both** options would show at ₹799.
 
 ### What happens to a cart that falls between two of my slabs?
 
-No rule from those slabs matches it. If that was your COD rule, COD is **hidden** for that cart (or shown greyed out, if **Show COD as disabled when blocked** is on). If it was a partial rule, that option just doesn't appear. Close the gap by making the next slab's **Min cart total** equal to the previous slab's **Max cart total**.
+No rule from those slabs matches it. If that was your COD rule, COD is **hidden** for that cart (or shown greyed out, if **Show COD as disabled when blocked** is on). If it was a partial rule, that option just doesn't appear. Close the gap by starting the next slab one paisa after the previous one ends (e.g. 1500 → 1500.01).
 
 ### What does a max cart value of 0 mean?
 

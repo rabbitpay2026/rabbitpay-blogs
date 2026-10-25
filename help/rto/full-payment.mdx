@@ -63,3 +63,31 @@ Yes, in the rule's **Payment methods** section: UPI, Cards, Wallets, NetBanking 
 ### Why is full payment not showing at checkout?
 
 Check that the rule is enabled, the cart meets its conditions, your payment gateway is connected and **Enabled** in **Settings → Payments**, and that you're testing in a fresh checkout tab.
+
+### Can I give a percentage discount on small orders and a flat discount on big orders?
+
+Yes. Make two **Full payment** rules with different **Cart range** and discount:
+
+| Rule | Min cart total | Max cart total | Discount |
+| --- | --- | --- | --- |
+| Pay online – 5% off | 0 | 1000 | Percentage, 5 |
+| Pay online – ₹100 off | 1000.01 | 0 | Fixed amount, 100 |
+
+Only the first matching Full payment rule is used for a cart, so each cart gets exactly one of the two discounts.
+
+### Can the prepaid discount be bigger for bigger carts?
+
+Yes, the same way: one Full payment rule per cart band, each with a bigger **Discount value**. Start each band one paisa after the previous one ends (e.g. 1000 → 1000.01) so no cart falls between them. See [Cart value limits](/help/rto/cart-value).
+
+### How do I exclude some products from my prepaid discount?
+
+Use two Full payment rules, in this order:
+
+1. **With the discount**, and **Applies to → All except selected** with the products to exclude.
+2. **Without a discount**, and no product restriction.
+
+Carts without those products get rule 1 and the discount. Carts with them skip rule 1 and get rule 2: they can still pay online, at full price.
+
+<Warning>
+  Don't rely on rule 1 alone. If the only Full payment rule is hidden by a product, collection or pincode restriction, the online payment options are hidden too, and those shoppers can't pay online.
+</Warning>
