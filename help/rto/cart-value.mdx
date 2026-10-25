@@ -62,3 +62,32 @@ Create a rule per band with non-overlapping ranges. For example:
 - "Pay ₹99 now": max ₹999
 - "Pay 10% now": min ₹1,000, max ₹4,999
 - "Pay 20% now": min ₹5,000
+
+### My two COD rules both cover ₹799. Which fee will the customer see?
+
+The one **higher in your rules list**. Only one COD rule is used per cart: the first one, from the top, whose conditions match. So if "₹799–2,999 → ₹120 fee" is above "₹0–799 → ₹60 fee", a ₹799 cart gets the ₹120 fee. Move the rules with the arrows to change this. See [Rule order](/help/rto/rule-order).
+
+### A cart of exactly ₹500 matches two of my rules. Which one shows?
+
+Both limits are inclusive, so ₹500 is inside "max ₹500" **and** "min ₹500".
+
+- **COD** and **Full payment** rules: only the first matching one (highest in the list) is used.
+- **Partial payment** rules (Percentage, Fixed amount): **every** matching rule shows as its own option, so the shopper sees both.
+
+### How should I set the min and max so my slabs don't overlap?
+
+Use the **same number** where one slab ends and the next begins, e.g. slab 1 **Max cart total** 799 and slab 2 **Min cart total** 799. Then put the slab you want at exactly ₹799 higher in the list.
+
+Don't use 799 and 800: a cart of ₹799.50 (prices with paise) would fall between them and match neither.
+
+### What happens to a cart that falls between two of my slabs?
+
+No rule from those slabs matches it. If that was your COD rule, COD is **hidden** for that cart (or shown greyed out, if **Show COD as disabled when blocked** is on). If it was a partial rule, that option just doesn't appear. Close the gap by making the next slab's **Min cart total** equal to the previous slab's **Max cart total**.
+
+### What does a max cart value of 0 mean?
+
+No upper limit. **0 or blank** means "no limit" on that side, so **Min cart total** 4,496 with **Max cart total** 0 means "₹4,496 and above".
+
+### Should I put 0 or 1 as the minimum for my first slab?
+
+Either works. 0 (or blank) means no lower limit. 1 means "₹1 and above", which in practice is every real cart. Use 0 to keep it simple.

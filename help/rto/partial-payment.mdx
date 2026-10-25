@@ -83,3 +83,34 @@ In **Orders**, the **Amount** column shows what was paid, with "of ₹total" und
 ### Where can I see the remaining amount for an order?
 
 Open the order in **Orders**: the Payment card shows **Balance due (COD)**. In Shopify, the order note shows "Collect on delivery: ₹Y".
+
+### Can I ask for a bigger advance as the order value goes up?
+
+Yes. Make one partial rule per price band, each with its own **Cart range** and **Amount**. For example:
+
+| Rule | Min cart total | Max cart total | Advance |
+| --- | --- | --- | --- |
+| Pay ₹99 now, rest COD | 0 | 1999 | ₹99 (Fixed amount) |
+| Pay ₹199 now, rest COD | 1999 | 4495 | ₹199 (Fixed amount) |
+| Pay 10% now, rest COD | 4495 | 0 | 10% (Percentage) |
+
+Use the same number where one band ends and the next starts, so no cart falls in between. See [Cart value limits](/help/rto/cart-value).
+
+### How do I offer partial payment for small orders and plain COD (with a fee) for big orders?
+
+1. Partial rule: **Max cart total** e.g. 1999.
+2. COD rule: **Min cart total** 1999 and your COD fee.
+
+Carts up to ₹1,999 see the advance option but no COD; bigger carts see COD with the fee. If you want small orders to keep COD too, leave the COD rule's cart range empty.
+
+### Can I offer both "Pay 10% now" and "Pay ₹100 now" and let the customer choose?
+
+Yes. Every partial rule that matches the cart shows as its own option, so the shopper picks one. If you want only one at a time, give them cart ranges that don't overlap.
+
+### Should I use a percentage or a fixed advance for high-value orders?
+
+A **fixed** advance (e.g. ₹99) is easy to understand and feels small, which suits low and mid-value orders. A **percentage** grows with the order, so on expensive carts the shopper has more at stake and is less likely to refuse delivery. Many stores use fixed for small carts and a percentage above a certain value, as in the table above.
+
+### Can I add a COD fee on top of the advance, and is it paid now or on delivery?
+
+Yes. In the partial rule turn on **Include COD fee**, then choose under **Collect the COD fee**: **On delivery (default)** adds it to the balance, **Upfront, with the advance** adds it to what's paid online now. See [COD fee](/help/rto/cod-fee).
