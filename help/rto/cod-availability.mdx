@@ -68,3 +68,27 @@ The cart went over **Max items for COD**, or above the COD rule's **Max cart tot
 ### Will customers still be able to pay online when COD is blocked?
 
 Yes. Blocking COD never blocks the order; prepaid and partial options stay available.
+
+### Can I show "COD not available above ₹X" instead of hiding COD?
+
+Yes. In your COD rule:
+
+1. Set **Max cart total** to X.
+2. Turn on **Show COD as disabled when blocked**.
+3. In **Message shown on the disabled COD option**, write e.g. "COD is available on orders up to ₹2,999. Please pay online."
+
+Bigger carts then see COD greyed out with your message. The same works when COD is blocked by a product, collection or pincode.
+
+### What message should I write when COD is greyed out?
+
+Say why, and what to do instead. For example:
+
+- Pincode: "Cash on Delivery isn't available in your area yet. Pay online to place your order."
+- Order value: "COD is available on orders up to ₹2,999. Please pay online."
+- Product: "This item can only be bought with online payment."
+
+One message is used for every reason, so if your COD rule has several conditions, keep it general.
+
+### Does greying out COD convert better than hiding it?
+
+Greying out tells shoppers COD exists but isn't available for **this** order, and why. Hidden COD can make a shopper think the store doesn't offer it, or that something is broken. If you're unsure, start with greyed out and a clear message, and compare your prepaid share in **Logs → Order Logs**.

@@ -70,3 +70,16 @@ In **RTO Suite**, in your Full payment rule → **Payment methods**. The order i
 ### Can I allow only some payment methods for small orders?
 
 Yes. Make two Full payment rules with different **Cart range** values and different **Payment methods**. Put the small-order rule first; it applies to carts in its range.
+
+### Can I show only UPI on the partial payment option?
+
+No. The **Payment methods** switches exist only on **Full payment** rules and control the online options in the list (Pay via UPI, Cards, and so on). A partial payment rule shows as one option; when the shopper picks it, your gateway's payment window opens with the methods your gateway offers.
+
+### How do I turn on EMI only for big orders?
+
+Make two Full payment rules:
+
+1. **Min cart total** e.g. 5000, with **EMI** on.
+2. No cart range, with EMI off.
+
+Put rule 1 first. Carts of ₹5,000 and above get EMI; smaller carts don't. EMI also shows only when your gateway offers it for that amount (banks usually need about ₹3,000 or more).
