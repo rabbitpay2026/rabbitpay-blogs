@@ -59,7 +59,13 @@ Open the rule, change the **Rule name** field and click **Save changes**.
 
 ### What name should I give a rule, will customers see it?
 
-Yes, shoppers see the rule name as the payment option's title at checkout. Use clear, shopper-friendly wording, for example "Pay 10% now & rest COD".
+It depends on the rule type:
+
+- **Percentage** and **Fixed amount** (partial payment) rules: yes, the rule name is the option's title at checkout. Use shopper-friendly wording, e.g. "Pay 10% now & rest COD".
+- **COD** rules: no. The option is always titled **Cash on Delivery**; the name is only for you.
+- **Full payment** rules: no. Shoppers see the online methods (Pay via UPI, Cards, and so on), with your discount shown next to them.
+
+For COD and Full payment rules, pick a name that helps **you**, e.g. "COD – orders up to ₹799".
 
 ### Can I make more than one rule?
 
@@ -95,3 +101,15 @@ Yes. Changes only apply after you click **Create rule** or **Save changes**. If 
 ### Can I copy an existing rule to make a new one?
 
 There's no copy button yet. Click **Add payment rule** and enter the same settings again.
+
+### Is it better to make one rule with many conditions or several simple rules?
+
+It depends on the rule type:
+
+- **COD**: only one COD rule is used per cart (the first match), so put your blocks (pincodes, phones, collections, item limit) on **one** COD rule. Use several COD rules only for different fees by cart value, and repeat the blocks on each.
+- **Partial payment**: several simple rules are fine; each matching one shows as its own option.
+- **Full payment**: one rule is usually enough. Add more only for different discounts or payment methods by cart value.
+
+### Which text does the customer see: the rule name, the heading or the description?
+
+For **partial payment** rules: the **Rule name** is the title, and **Custom description (optional)** shows underneath (e.g. "Pay ₹99 now, ₹700 on delivery"). For **COD**, shoppers see "Cash on Delivery" with the COD fee; for **Full payment**, they see the online methods with your discount. See the question above about rule names.

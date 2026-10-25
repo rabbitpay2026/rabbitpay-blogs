@@ -102,3 +102,29 @@ Cart range uses the total **before discounts, without shipping or tax**, and bot
 ### How do I contact support if my rules are not working?
 
 Click **Talk to a person** in the **RabbitAI** panel, or use the chat bubble in your dashboard. Include your store domain and the rule name.
+
+### If my rule has products, cart value, pincodes and phone numbers, do all of them need to match?
+
+Yes. A rule shows only when the cart passes **every** condition you've set: cart range **and** products **and** collections **and** pincode lists **and** phone lists. One failed condition hides the rule.
+
+### My rule has many conditions and isn't showing. How do I find which one is blocking it?
+
+Test one condition at a time:
+
+1. Note down the rule's settings.
+2. Untick or clear one condition (e.g. the pincode list), save, and check in a **new incognito window**.
+3. If the rule now shows, that condition was blocking it. If not, put it back and try the next one.
+
+Start with the usual suspects: **Cart range** (checked before discounts, without shipping or tax), **Only selected** products or collections, and allow lists, which hide the rule for everyone not on them.
+
+### How can I test which rule a cart will get, without placing an order?
+
+There's no rule simulator yet. Open your store in a **new incognito window**, add products to reach the cart value you want, go to checkout and enter a test phone and an address with the pincode you want to check. The payment screen shows exactly which options that cart gets; close the tab without paying.
+
+### Can I see all my rules' cart ranges side by side to spot overlaps and gaps?
+
+Not yet: the rules list doesn't show cart ranges. Open each rule to check its **Min cart total** and **Max cart total**. A simple habit helps: put the range in the name of COD and Full payment rules (shoppers don't see those names), e.g. "COD – ₹0 to ₹799".
+
+### Why do I see two payment options for one cart value?
+
+Two **partial payment** rules match that cart. Every matching partial rule is shown, so their cart ranges overlap. Start the next rule's **Min cart total** one paisa after the previous rule's **Max cart total** (e.g. 1999 → 1999.01). COD and Full payment rules never show twice; only the first match is used.
