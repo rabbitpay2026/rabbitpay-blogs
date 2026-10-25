@@ -76,3 +76,27 @@ Check that:
 ### Can I use both blocking and allowing at the same time?
 
 Yes. A pincode must then be **on the allow list and not on the block list** for the rule to show.
+
+### Is there a limit on how many pincodes I can block?
+
+No fixed limit. Stores run COD rules with several thousand blocked pincodes. For long lists, use **ranges** where you can (e.g. `400001-400099`): they're shorter to maintain and cover every pincode in between.
+
+### Can I block a whole range of pincodes instead of typing each one?
+
+Yes. Write the first and last pincode with a dash, e.g. `110001-110099`. Both ends need the same number of digits. You can mix ranges and single pincodes in the same list.
+
+### How do I upload a big list of pincodes from Excel?
+
+There's no file upload. Copy the pincode column in Excel or Google Sheets and paste it into the box: one pincode per line works, as do commas. Then save.
+
+### How do I block COD for a whole state or city?
+
+There's no state or city option; restrictions work on pincodes. Add the pincode **ranges** that cover the area, e.g. `110001-110099`. Check the ranges against India Post's pincode list, because a range covers every number in between, including pincodes outside the area you meant.
+
+### How do I add my courier's RTO or non-serviceable pincode list?
+
+Download the list from your courier panel, copy the pincode column, and paste it into your COD rule's **Zipcodes to hide this rule** (with **Enable zipcode restrictions** ticked). Update it whenever your courier sends a new list.
+
+### Should I block pincodes on the COD rule or use the risk engine?
+
+Use both. A **pincode list** is fixed: it blocks COD for those areas every time. The [Return-risk engine](/help/rto/risk-engine) scores every order automatically and can grey out COD for risky shoppers anywhere, including areas you haven't listed. Keep your list for areas you already know are bad, and let the engine catch the rest.
