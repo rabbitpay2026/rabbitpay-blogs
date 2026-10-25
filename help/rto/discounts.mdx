@@ -103,3 +103,19 @@ One of those switches is off in your COD rule. Turn it back on if you want disco
 ### How do I show the discount in the payment description?
 
 In a partial rule's **Custom description**, `{discount}` inserts the cart's discount amount. You can also put the offer in the rule name, e.g. "Pay online & save 5%".
+
+### When should I use "per product" instead of "once per order"?
+
+Use **Per product (× cart quantity)** when shoppers often buy several units and you want the reward to grow with the cart, e.g. ₹50 off per item for paying online. Use **Total amount (once per order)** when you want a predictable cost per order. Per product works only with **Fixed amount** discounts.
+
+### Can I allow coupons on prepaid orders but not on COD?
+
+Yes. In your **COD** rule, under **Applicable discounts on COD**, switch off **Manual discounts**. Coupon codes (and gift coupons) still work for online and partial payment, but a COD order is charged without them.
+
+### A customer used a coupon and chose COD. Why did the discount disappear?
+
+Your COD rule has **Manual discounts** switched off under **Applicable discounts on COD**, so COD is priced without the coupon. The shopper gets the coupon back if they pay online. Switch it on if coupons should work on COD.
+
+### Can I keep Shopify automatic discounts for prepaid but stop them for COD?
+
+Yes. In the COD rule, switch off **Automatic discounts (Shopify)**. Prepaid and partial orders still get them; COD is charged at full price.

@@ -60,3 +60,26 @@ Check that the amount isn't blank or 0, that **Include COD fee** is on (partial 
 ### How do I show the COD fee in the payment description?
 
 In a partial rule's **Custom description (optional)**, insert `{cod_fee}`. For example: `Pay {pay_now} now, {pay_later} on delivery (incl. {cod_fee} COD fee)`.
+
+### How do I charge a different COD fee for small and big orders?
+
+Make one COD rule per price band, each with its own **Cart range** and **COD fee**. For example:
+
+| Rule | Min cart total | Max cart total | COD fee |
+| --- | --- | --- | --- |
+| COD – small orders | 0 | 799 | ₹60 |
+| COD – big orders | 799.01 | 2999 | ₹120 |
+
+Only one COD rule is used per cart: the first matching one from the top of your list. See [Cart value limits](/help/rto/cart-value) for how to set the bands without gaps.
+
+### How do I set up COD fee slabs, like ₹60 below ₹799 and ₹120 above?
+
+Create two COD rules as in the table above. Give the second one **Max cart total** 0 if it should cover every order above ₹799. If you'd rather have one fee that grows with the order, use a single COD rule with **Percentage of order value**, or **Whichever is higher** (e.g. ₹60 or 2%).
+
+### Should I write the COD fee in the rule name, or does it show automatically?
+
+It shows automatically. The COD option at checkout is always titled **Cash on Delivery**, with the fee shown as "₹X COD fee added" and included in the price on the right. The COD rule's name is only for you; shoppers don't see it.
+
+### Can I call the COD fee a "shipping charge" or "platform fee" at checkout?
+
+Not on the COD option: it always says "COD fee". On a **partial payment** rule you can word it your way in **Custom description (optional)**, e.g. `Pay {pay_now} now, {pay_later} on delivery (incl. {cod_fee} handling)`.
